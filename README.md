@@ -1,4 +1,4 @@
-#Glassdoor (creative name coming soon)
+# Glassdoor (creative name coming soon)
 
 * Ruby version
 
