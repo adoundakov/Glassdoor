@@ -11,7 +11,7 @@ This web application is a clone of the popular job-hunting website Glassdoor,
 built using Ruby on Rails and React/Redux. Over the next two weeks, the app will
 support the following (all with bug-free navigation, great styling, and adequate seed data):
 
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] New account creation, login, guest demo login for both employers and seekers
 - [ ] Seekers can view, save, and apply to postings made by Employers
 - [ ] Seekers can search for jobs and companies
