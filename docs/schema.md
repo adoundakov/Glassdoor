@@ -1,6 +1,6 @@
 # Schema Information
 
-## users
+## Users
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -36,13 +36,17 @@ pros            | string    | not null, length between 200 - 1000 chars
 cons            | string    | not null, length between 200 - 1000 chars
 advice          | string    | not null, length < 300 chars
 
+## Review-Salary Join Table
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+review_id       | integer   | not null, unique w/ combo of salary_id, indexed
+salary_id       | integer   | not null, indexed
 
 ## Salaries
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-author_id       | integer   | not null, unique w/ combo of title
-company_id      | integer   | not null, indexed
 title           | string    | not null, indexed, length < 50 chars
 area            | integer   | not null
 amount          | integer   | not null
@@ -51,7 +55,6 @@ amount          | integer   | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-author_id       | integer   | not null
 company_id      | integer   | not null, indexed
 created_on      | date      | not null, auto added by timestamps
 updated_on      | date      | not null, auto added by timestamps

@@ -43,13 +43,6 @@
 **NewPostingContainer**
 - NewPostingForm
 
-**EmployerHomeContainer**
-- PostingListContainer
-  - PostingListIndex
-    - PostingListIndexItem
-- EmployerHeaderContainer
-  - PostingSummary
-
 **SeekerHomeContainer**
 - SavedPostingListContainer
   - SavedPostingIndex
@@ -75,5 +68,4 @@
 | "/companies/:companyId" | "CompanyDetailContainer" |
 | "/companies/:companyId/new-review" | "NewReviewForm" |
 | "/profile" | "SeekerHomeContainer" |
-| "/profile" | "EmployerHomeContainer" |
 | "/new-posting" | "NewPostingContainer" |
