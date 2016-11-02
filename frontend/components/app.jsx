@@ -1,14 +1,10 @@
 import React from 'react';
-import Header from './misc/header';
+import HeaderContainer from './misc/header_container';
 import Footer from './misc/footer';
-
-// needed for material-ui components
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
 
 const App = ({ children }) => (
   <div>
-    <Header/>
+    <HeaderContainer />
     {children}
     <Footer/>
   </div>

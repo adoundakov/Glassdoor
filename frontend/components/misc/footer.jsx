@@ -6,7 +6,8 @@ import {Left, Middle, Right} from './footer_spans';
 const Footer = () => (
   <footer>
     <Link className='hr-link' to='/'>Work in HR or Recruiting?</Link>
-    <ul className='footer'>
+    <p>easyHire is your free inside look at jobs and companies. Salary details, company reviews, and interview questions — all posted anonymously by employees and job seekers.</p>
+    <ul className='footer-list'>
       <Left/>
       <Middle/>
       <Right/>

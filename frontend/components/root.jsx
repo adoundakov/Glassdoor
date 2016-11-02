@@ -2,19 +2,17 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 
-import {red700} from 'material-ui/styles/colors';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 import App from './app';
-import SessionFormContainer from './session/session_form_container';
+import SessionForm from './session/session_form';
 import ConstructionSplash from './misc/construction';
 
-const muiTheme = getMuiTheme({
-  appBar: {
-    height: 38
-  }
-});
+// TESTING -------------------------------------------------------------------
+import Jobs from './jobs/jobs';
+import Companies from './companies/companies';
+import TestModal from './modal';
+// TESTING -------------------------------------------------------------------
+
+
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -24,17 +22,18 @@ const Root = ({ store }) => {
   };
 
   return (
-    <MuiThemeProvider muiTheme={muiTheme}>
-      <Provider store={store}>
-        <Router history={hashHistory}>
-          <Route path={'/'} component={App}>
-            <IndexRoute component={ConstructionSplash}/>
-            <Route path='login' component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-            <Route path='signup' component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-          </Route>
-        </Router>
-      </Provider>
-    </MuiThemeProvider>
+    <Provider store={store}>
+      <Router history={hashHistory}>
+        <Route path={'/'} component={App}>
+          <IndexRoute component={ConstructionSplash}/>
+          <Route path='login' component={SessionForm} onEnter={_redirectIfLoggedIn} />
+          <Route path='signup' component={SessionForm} onEnter={_redirectIfLoggedIn} />
+          <Route path='jobs' component={Jobs}/>
+          <Route path='companies' component={Companies}/>
+          <Route path='test' component={TestModal}/>
+        </Route>
+      </Router>
+    </Provider>
   );
 };
 

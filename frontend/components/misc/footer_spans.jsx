@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 export const Left = () => (
   <li>
     <ul className='flex-list'>
-      <li className='footer-list'>
+      <li className='footer-sub-list'>
         <p>easyHire</p>
         <ul>
           <li><a>About Us</a></li>
@@ -13,7 +13,7 @@ export const Left = () => (
           <li><a>Research</a></li>
         </ul>
       </li>
-      <li className='footer-list'>
+      <li className='footer-sub-list'>
         <p>Employers</p>
         <ul>
           <li><a>Get a Free Employer Account</a></li>
@@ -28,7 +28,7 @@ export const Left = () => (
 export const Middle = () => (
   <li>
     <ul className='flex-list'>
-      <li className='footer-list'>
+      <li className='footer-sub-list'>
         <p>Community</p>
         <ul>
           <li><a>Help Center</a></li>
@@ -37,7 +37,7 @@ export const Middle = () => (
           <li><a>Privacy & Cookies</a></li>
         </ul>
       </li>
-      <li className='footer-list'>
+      <li className='footer-sub-list'>
         <p>Work With Us</p>
         <ul>
           <li><a>Job Boards</a></li>

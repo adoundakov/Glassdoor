@@ -1,40 +1,53 @@
-// React Things
 import React from 'react';
+import Nav from './nav';
 import {hashHistory} from 'react-router';
-// Mui Things
-import AppBar from 'material-ui/AppBar';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import Modal, {closeStyle} from 'simple-react-modal';
+import SessionForm from '../session/session_form';
 
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.logOut = props.logOut.bind(this);
+    this.state = {show: false};
+    this.loggedIn = props.loggedIn;
+  }
 
-// const loggedDropdown = (props) => (
-//   <IconMenu
-//     {...props}
-//     iconButtonElement={
-//       <IconButton><MoreVertIcon /></IconButton>
-//     }
-//     targetOrigin={{horizontal: 'right', vertical: 'top'}}
-//     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-//   >
-//     <MenuItem primaryText="Profile" />
-//     <MenuItem primaryText="Help" />
-//     <MenuItem primaryText="Sign out" />
-//   </IconMenu>
-// );
-//
-// loggedDropdown.muiName = 'IconMenu';
+  componentWillReceiveProps(nextProps) {
+    this.loggedIn = nextProps.loggedIn;
+  }
 
-const Header = () => (
-  <section className='header'>
-    <AppBar
-      title="easyHire"
-      style={{backgroundColor: '#86B73B', marginTop: 0}}
-      showMenuIconButton={false}
-      iconElementRight={<FlatButton label="Login" style={{ color: '#fff' }} onClick={() => hashHistory.push('/login')} />}
-    />
-  </section>
-);
+  show(){
+    this.setState({show: true});
+  }
+
+  close(){
+    this.setState({show: false});
+  }
+  render() {
+    let profButton;
+    if (this.props.loggedIn) {
+      profButton = (<a onClick={this.logOut}>Log Out</a>);
+    } else {
+      profButton = (<a onClick={this.show.bind(this)}>Sign In</a>);
+    }
+
+    return (
+      <section className='header'>
+        <h3 onClick={() => hashHistory.push('/')}>easyHire</h3>
+        <Nav />
+        {profButton}
+        <Modal
+          style={{transition: 'opacity 100ms'}}
+          transitionSpeed={125}
+          closeOnOuterClick={true}
+          show={this.state.show}
+          onClose={this.close.bind(this)}>
+          <a className='modal-close' onClick={this.close.bind(this)}>X</a>
+          <SessionForm />
+        </Modal>
+      </section>
+    );
+  }
+}
 
 export default Header;

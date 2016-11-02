@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-
 import Countdown from 'react-count-down';
 import ReactDOM from 'react-dom';
 
