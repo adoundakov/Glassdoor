@@ -24,6 +24,7 @@
     "lodash": "^4.16.4",
     "material-ui": "^0.16.1",
     "react": "^15.3.2",
+    "react-count-down": "^1.0.3",
     "react-dom": "^15.3.2",
     "react-logger": "^1.1.0",
     "react-redux": "^4.4.5",

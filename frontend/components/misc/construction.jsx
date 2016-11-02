@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+
+
+import Countdown from 'react-count-down';
+import ReactDOM from 'react-dom';
+
+class TestComponent extends Component {
+  render () {
+    let OPTIONS = { endDate: '11/11/2016 06:00 PM',
+                    prefix: 'until easyHire is live!' };
+    return (
+      <div>
+        <Countdown options={OPTIONS} />
+      </div>
+    );
+  }
+}
 
 const ConstructionSplash = () => (
   <section className='construction-splash'>
-    <h2>easyHire is coming soon.</h2>
-    <div>Please pardon our dust.</div>
+    <TestComponent />
+    <div>Please pardon our dust</div>
   </section>
 );
 
 export default ConstructionSplash;
+
+
+// <h2>easyHire is coming soon</h2>

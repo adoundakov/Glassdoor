@@ -21,6 +21,7 @@ body, h1, h2, h3, h4, div, section, li, a, ul, ol, span {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 .construction-splash {
@@ -35,15 +36,107 @@ body, h1, h2, h3, h4, div, section, li, a, ul, ol, span {
 }
 
 .construction-splash div {
-  color: black;
+  color: #404040;
   font-weight: lighter;
 }
 
 .construction-splash h2 {
-  color: black;
+  color: #404040;
   margin-bottom: 10px;
 }
 
-.mui-button {
-  margin-top: 0;
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 200px;
+  background-color: #EAEAEA;
+  font-size: 12px;
+  color: #404040;
+}
+
+.flex-list {
+  display: flex;
+  width: 33%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hr-link {
+  font-size: 14px;
+  border-radius: 2px;
+  font-weight: lighter;
+  position: fixed;
+  padding: 8px 20px;
+  background-color: #86B73B;
+  bottom: 12px;
+  right: 15px;
+  color: #ffffff;
+}
+
+.flex-grid {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.footer a {
+  color: #2c84cc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #016da3;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ios {
+  /*background: url('images/App_Store_Badge.jpg');*/
+  background-size: cover;
+}
+
+.android {
+  /*background: url('images/Android_Store_Badge.jpg');*/
+  margin-left: 14px;
+  background-size: cover;
+}
+
+.app-store {
+  width: 125px;
+  height: 41px;
+}
+
+.app-store:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.footer-list {
+  margin: 0 20px;
+}
+
+.react-count-down {
+    margin: 0;
+    padding: 2em;
+}
+
+.react-count-down .prefix {
+  font-size: 150%;
+  font-weight: 200;
+  line-height: 1.5;
+  color: #404040;
+}
+
+.react-count-down .date {
+  font-size: 150%;
+  font-weight: 200;
+  line-height: 1.5;
+  color: #666;
 }
