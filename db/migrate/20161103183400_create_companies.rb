@@ -6,7 +6,7 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.string :ceo, null: false
       t.string :logo_url, null: false
       t.string :cover_url, null: false
-      t.integer :location, null: false, index: true
+      t.string :location, null: false, index: true
       t.timestamps
     end
   end

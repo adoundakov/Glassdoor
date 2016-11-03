@@ -20,7 +20,7 @@ size            | string    | not null
 ceo             | string    | not null
 logo_url        | string    | not null
 cover_url       | string    | not null
-location        | integer   | not null, indexed
+location        | string    | not null
 
 ## Reviews
 column name     | data type | details

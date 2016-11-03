@@ -14,7 +14,7 @@
 #
 
 class Company < ApplicationRecord
-  SIZES = %w('1-10 11-50 51-200 201-500 501-1,000 1,001-5,000 5,001-10,000 10,001+')
+  SIZES = %w(1-10 11-50 51-200 201-500 501-1,000 1,001-5,000 5,001-10,000 10,001+)
   validates :name, uniqueness: true, presence: true
   validates :ceo, :logo_url, :cover_url, :location, presence: true
   validates :size, inclusion: { in: SIZES }

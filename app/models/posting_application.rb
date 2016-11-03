@@ -10,7 +10,7 @@
 #
 
 class PostingApplication < ApplicationRecord
-  validates :user_id, :posting_id, presence: true
+  validates :user_id, :posting_id, :resume, presence: true
 
   belongs_to :user
   belongs_to :posting

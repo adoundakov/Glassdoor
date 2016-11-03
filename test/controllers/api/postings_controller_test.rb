@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PostingTest < ActiveSupport::TestCase
+class Api::PostingsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
