@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103180722) do
+ActiveRecord::Schema.define(version: 20161103183412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "size",       null: false
+    t.string   "ceo",        null: false
+    t.string   "logo_url",   null: false
+    t.string   "cover_url",  null: false
+    t.integer  "location",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location"], name: "index_companies_on_location", using: :btree
+    t.index ["name"], name: "index_companies_on_name", using: :btree
+  end
+
+  create_table "posting_applications", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "posting_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["posting_id"], name: "index_posting_applications_on_posting_id", using: :btree
+    t.index ["user_id", "posting_id"], name: "index_posting_applications_on_user_id_and_posting_id", using: :btree
+  end
+
+  create_table "posting_saves", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "posting_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["posting_id"], name: "index_posting_saves_on_posting_id", using: :btree
+    t.index ["user_id", "posting_id"], name: "index_posting_saves_on_user_id_and_posting_id", using: :btree
+  end
 
   create_table "postings", force: :cascade do |t|
     t.integer  "company_id"

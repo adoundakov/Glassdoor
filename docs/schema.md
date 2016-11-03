@@ -62,3 +62,21 @@ posting_url     | string    |
 title           | string    | not null
 job_type        | string    | not null
 description     | string    | not null, length > 500 chars
+
+## User-Postings Join Table
+> For saved postings.
+
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+user_id         | integer   | not null, indexed, unique w/ posting_id
+posting_id      | integer   | not null, indexed, unique w/ user_id
+
+## Posting Applications Join Table
+> For postings to see applications.
+
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+user_id         | integer   | not null, indexed, unique w/ posting_id
+posting_id      | integer   | not null, indexed, unique w/ user_id

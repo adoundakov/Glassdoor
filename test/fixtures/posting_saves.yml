@@ -1,15 +1,12 @@
 # == Schema Information
 #
-# Table name: postings
+# Table name: posting_saves
 #
-#  id           :integer          not null, primary key
-#  company_id   :integer
-#  external_url :string
-#  title        :string           not null
-#  type         :string           not null
-#  description  :string           not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id         :integer          not null, primary key
+#  user_id    :integer          not null
+#  posting_id :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
