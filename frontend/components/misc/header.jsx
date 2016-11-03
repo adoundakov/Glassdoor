@@ -29,19 +29,21 @@ class Header extends React.Component {
     }
 
     return (
-      <section className='header'>
-        <h3 onClick={() => hashHistory.push('/')}>easyHire</h3>
-        <Nav />
-        {profButton}
-        <Modal
-          style={{transition: 'opacity 100ms'}}
-          transitionSpeed={125}
-          closeOnOuterClick={true}
-          show={this.props.modal}
-          onClose={this.close.bind(this)}>
-          <SessionForm />
-        </Modal>
-      </section>
+      <div className='header-background'>
+        <section className='header'>
+          <h3 onClick={() => hashHistory.push('/')}>easyHire</h3>
+          <Nav />
+          {profButton}
+          <Modal
+            style={{transition: 'opacity 100ms'}}
+            transitionSpeed={125}
+            closeOnOuterClick={true}
+            show={this.props.modal}
+            onClose={this.close.bind(this)}>
+            <SessionForm />
+          </Modal>
+        </section>
+      </div>
     );
   }
 }
