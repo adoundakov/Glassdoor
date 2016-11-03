@@ -13,9 +13,7 @@ const SessionForm = () => {
   };
 
   return (
-    <section className='session-form'>
-      <Tabs panes={panes}/>
-    </section>
+    <Tabs panes={panes}/>
   );
 };
 

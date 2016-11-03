@@ -5,6 +5,7 @@ class LogInForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
     this.state = {username: '', password: ''};
     this.update = this.update.bind(this);
   }
@@ -16,8 +17,13 @@ class LogInForm extends React.Component {
   }
 
   handleLogIn() {
-    console.log(this.props.logIn);
     this.props.logIn(this.state);
+    this.props.closeModal();
+  }
+
+  handleGuest() {
+    this.props.logIn({username: 'guestSeeker', password: '123456'});
+    this.props.closeModal();
   }
 
   render() {
@@ -31,6 +37,7 @@ class LogInForm extends React.Component {
           <input type='text' placeholder='Username' onChange={this.update('username')}/><br/>
           <input type='password' placeholder='Password' onChange={this.update('password')}/><br/>
           {errors}
+          <p className='guest-login' onClick={this.handleGuest}>Log In as Guest</p>
           <a onClick={this.handleLogIn}>Sign In</a>
         </form>
       </section>

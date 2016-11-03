@@ -8,17 +8,18 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.logOut = props.logOut.bind(this);
-    this.state = {show: false};
-    this.loggedIn = props.loggedIn;
+    this.openModal = props.openModal.bind(this);
+    this.closeModal = props.closeModal.bind(this);
   }
 
   show(){
-    this.setState({show: true});
+    this.openModal();
   }
 
   close(){
-    this.setState({show: false});
+    this.closeModal();
   }
+
   render() {
     let profButton;
     if (this.props.loggedIn) {
@@ -36,7 +37,7 @@ class Header extends React.Component {
           style={{transition: 'opacity 100ms'}}
           transitionSpeed={125}
           closeOnOuterClick={true}
-          show={this.state.show}
+          show={this.props.modal}
           onClose={this.close.bind(this)}>
           <SessionForm />
         </Modal>

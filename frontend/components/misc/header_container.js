@@ -1,13 +1,17 @@
 import {connect} from 'react-redux';
 import Header from './header';
 import {logOut} from '../../actions/session_actions';
+import {openModal, closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = state => ({
   loggedIn: state.session.currentUser ? true : false,
+  modal: state.modal
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  logOut: () => dispatch(logOut())
+  logOut: () => dispatch(logOut()),
+  openModal: () => dispatch(openModal()),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(
