@@ -3,6 +3,7 @@ import Nav from './nav';
 import {hashHistory} from 'react-router';
 import Modal, {closeStyle} from 'simple-react-modal';
 import SessionForm from '../session/session_form';
+import ProfileDropDown from './profile_drop_down';
 
 class Header extends React.Component {
   constructor(props) {
@@ -23,7 +24,11 @@ class Header extends React.Component {
   render() {
     let profButton;
     if (this.props.loggedIn) {
-      profButton = (<a onClick={this.logOut}>Log Out</a>);
+      profButton = (
+        <div className='profile-drop-down-trigger'>
+          <a className='cf'></a>
+          <ProfileDropDown logOut={this.logOut} currentUserId={this.props.currentUserId}/>
+        </div>);
     } else {
       profButton = (<a onClick={this.show.bind(this)}>Sign In</a>);
     }

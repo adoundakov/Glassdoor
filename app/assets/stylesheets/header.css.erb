@@ -38,3 +38,48 @@
   display: inline-block;
   padding: 0 14px;
 }
+
+.profile-drop-down {
+  display: block;
+  /*display: none;  FOR TESTING */
+  width: 275px;
+  background-color: #fff;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  top: 42px;
+  right: 30px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.profile-drop-down li {
+  padding: 10px 21px;
+  line-height: 1em;
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+  align-content: center;
+}
+
+.profile-drop-down:first-child {
+  padding: 15px 21px;
+}
+
+.profile-drop-down li:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.profile-drop-down-trigger:hover .profile-drop-down {
+  display: block;
+}
+
+.profile-drop-down-trigger {
+  width: 20px;
+  height: 20px;
+  background-image: url("<%= asset_data_uri 'sprites_sitewide.png'%>");
+  background-repeat: no-repeat;
+  background-position: -198px -82px;
+  display: inline-block;
+}
