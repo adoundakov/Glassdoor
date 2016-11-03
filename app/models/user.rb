@@ -20,12 +20,22 @@ class User < ApplicationRecord
 
   validates :username, :session_token, :email, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
-  validates :is_employer, inclusion: {in: [true, false], message: "Invalid account type"}
-  validates :password, length: {minimum: 6, allow_nil: true}
+  validates :is_employer, inclusion: { in: [true, false], message: "Invalid account type" }
+  validates :password, length: { minimum: 6, allow_nil: true }
   validate :no_company_if_seeker
 
+  has_many :posting_saves,
+    class_name: :PostingSave,
+    primary_key: :id,
+    foreign_key: :user_id
+
+  has_many :posting_applications
+
+  has_many :saved_postings, through: :posting_saves, source: :posting
+  has_many :applied_positions, through: :posting_applications, source: :posting
+
   def no_company_if_seeker
-    if (!is_employer && company_id != -1)
+    if !is_employer && company_id != -1
       errors.add(:company_id, "can't be set for job seekers")
     end
   end

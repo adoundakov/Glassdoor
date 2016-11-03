@@ -10,20 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103204352) do
+ActiveRecord::Schema.define(version: 20161103213601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "size",       null: false
-    t.string   "ceo",        null: false
-    t.string   "logo_url",   null: false
-    t.string   "cover_url",  null: false
-    t.string   "location",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                                                               null: false
+    t.string   "size",                                                               null: false
+    t.string   "ceo",                                                                null: false
+    t.string   "logo_url",                                                           null: false
+    t.string   "cover_url",                                                          null: false
+    t.string   "location",                                                           null: false
+    t.string   "company_url"
+    t.string   "description", default: "This Company has yet to add a description."
+    t.datetime "created_at",                                                         null: false
+    t.datetime "updated_at",                                                         null: false
     t.index ["location"], name: "index_companies_on_location", using: :btree
     t.index ["name"], name: "index_companies_on_name", using: :btree
   end

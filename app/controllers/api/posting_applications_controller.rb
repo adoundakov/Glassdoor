@@ -1,4 +1,6 @@
 class Api::PostingApplicationsController < ApplicationController
+  before_action :redirect_unless_logged_in, only: [:index]
+
   def index
     @posting_applications = PostingApplication.where(user_id: current_user.id)
   end

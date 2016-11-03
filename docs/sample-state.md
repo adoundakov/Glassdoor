@@ -30,7 +30,7 @@
     4: {
       name: "Google",
       size: "10000+ employees",
-      hq: "Mountain View, CA",
+      location: "Mountain View, CA",
       industry: "Tech"
       description: "is cool",
       CEO: "Sundar Pichai",
@@ -71,6 +71,7 @@
       amount: 187314
     }
   },
-  loading: false // used to add loading spinners to site
+  loading: false, // used to add loading spinners to site
+  modal: true  // for auth form
 }
 ```

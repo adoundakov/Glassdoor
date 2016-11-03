@@ -1,4 +1,7 @@
 class Api::PostingSavesController < ApplicationController
+  
+  before_action :redirect_unless_logged_in
+
   def index
     @posting_saves = PostingSave.where(user_id: current_user.id)
   end

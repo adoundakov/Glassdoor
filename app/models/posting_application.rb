@@ -7,6 +7,7 @@
 #  posting_id :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  resume     :string           not null
 #
 
 class PostingApplication < ApplicationRecord

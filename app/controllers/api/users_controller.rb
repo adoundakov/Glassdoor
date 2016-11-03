@@ -1,4 +1,7 @@
 class Api::UsersController < ApplicationController
+  
+  before_action :redirect_unless_logged_in, only: [:show]
+
   def create
     @user = User.new(user_params)
 
