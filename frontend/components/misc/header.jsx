@@ -12,10 +12,6 @@ class Header extends React.Component {
     this.loggedIn = props.loggedIn;
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.loggedIn = nextProps.loggedIn;
-  }
-
   show(){
     this.setState({show: true});
   }
@@ -42,7 +38,6 @@ class Header extends React.Component {
           closeOnOuterClick={true}
           show={this.state.show}
           onClose={this.close.bind(this)}>
-          <a className='modal-close' onClick={this.close.bind(this)}>X</a>
           <SessionForm />
         </Modal>
       </section>

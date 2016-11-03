@@ -1,0 +1,74 @@
+
+footer {
+  width: 100%;
+  min-height: 200px;
+  background-color: #EAEAEA;
+  font-size: 12px;
+  color: #404040;
+}
+
+.footer-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hr-link {
+  font-size: 14px;
+  border-radius: 2px;
+  font-weight: lighter;
+  position: fixed;
+  padding: 8px 20px;
+  background-color: #86B73B;
+  bottom: 12px;
+  right: 15px;
+  color: #fff;
+}
+
+.hr-link:hover {
+  background-color: #75B94D;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+footer > p {
+  display: inline-block;
+  margin: 0 10%;
+  width: 80%;
+  color: #666;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-sub-list {
+  margin: 0 20px;
+}
+
+.ios {
+  background: url('<%= asset_data_uri "App_Store_Badge.png" %>');
+  background-size: cover;
+}
+
+.android {
+  background: url('<%= asset_data_uri "Android_Store_Badge.png" %>');
+  margin-left: 14px;
+  background-size: cover;
+}
+
+.app-store {
+  width: 125px;
+  height: 41px;
+}
+
+.app-store:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.error-item {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}

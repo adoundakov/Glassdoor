@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-
 import Countdown from 'react-count-down';
-import ReactDOM from 'react-dom';
 
 class TestComponent extends Component {
   render () {
@@ -23,6 +21,3 @@ const ConstructionSplash = () => (
 );
 
 export default ConstructionSplash;
-
-
-// <h2>easyHire is coming soon</h2>
