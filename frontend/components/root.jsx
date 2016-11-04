@@ -6,9 +6,9 @@ import App from './app';
 import ConstructionSplash from './misc/construction';
 import LandingSplash from './misc/landing_splash';
 import UserProfile from './users/profile';
+import PostingResultsContainer from './postings/posting_results_container';
 
 // TESTING -------------------------------------------------------------------
-import Jobs from './jobs/jobs';
 import Companies from './companies/companies';
 // TESTING -------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ const Root = ({ store }) => {
           <Route path='user/:id'
                  component={UserProfile}
                  onEnter={_redirectIfLoggedOut}/>
-          <Route path='jobs' component={Jobs}/>
+               <Route path='jobs' component={PostingResultsContainer}/>
           <Route path='companies' component={Companies}/>
         </Route>
       </Router>

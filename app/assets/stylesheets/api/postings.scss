@@ -1,3 +1,93 @@
 // Place all the styles related to the api/postings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.results-pane {
+  margin: 14px auto;
+  padding: 0 14px;
+  width: 100%;
+  background-color: #EAEAEA;
+  box-sizing: border-box;
+}
+
+.posting-results-container {
+  max-width: 1280px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 1px 1px 1px rgba(127,127,127,0.3);
+}
+
+.jobs-header {
+  display: block;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  line-height: 1em;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+.posting-results-list {
+  float: left;
+  width: 33%;
+  box-sizing: border-box;
+}
+
+.posting-result-title {
+  color: #0065C4;
+  font-size: 16px;
+}
+
+.posting-result-title:hover {
+  color: #004687;
+  text-decoration: underline;
+}
+
+.filters {
+  border-bottom: 1px solid #ccc;
+}
+
+.posting-detail-container {
+  width: 66%;
+  float: left;
+  box-sizing: border-box;
+  border-left: 2px solid #ccc;
+  // testing
+  height: 500px;
+}
+
+.posting-result-item {
+  margin: 0;
+  width: 100%;
+  max-width: 427px;
+  min-height: 90px;
+  max-height: 131px;
+  border-bottom: 1px solid #DEDEDE;
+  padding: 0 14px;
+  display: flex;
+  align-content: space-between;
+  box-sizing: border-box;
+}
+
+.posting-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 14px 0 14px 14px;
+}
+
+.img-box {
+  padding-top: 14px;
+}
+
+.posting-result-item img {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #DEDEDE;
+  padding: 2px;
+}
+
+.posting-result-item:hover {
+  cursor: pointer;
+  background-color: #F1F1F1;
+}
