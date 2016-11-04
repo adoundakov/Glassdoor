@@ -1,9 +1,16 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 
-const PostingResultItem = ({posting}) => {
+const PostingResultItem = ({posting, requestPosting}) => {
+
+  const handleClick = (e) => {
+    requestPosting(posting.id);
+    console.log('CLICKED');
+  };
+
   return (
-    <li className='posting-result-item cf'>
+    <li className='posting-result-item cf'
+        onClick={handleClick}>
       <div className='img-box'>
         <img src={posting.company.logo_url} alt={posting.company.name}/>
       </div>

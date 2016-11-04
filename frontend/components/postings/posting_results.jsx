@@ -16,7 +16,7 @@ class PostingResults extends React.Component {
 
   render() {
     let results = this.props.postings.map((posting) => (
-      <PostingResultItem onClick= {() => this.requestOnePosting(posting.id)}
+      <PostingResultItem requestPosting={this.requestOnePosting}
                          key={posting.id}
                          posting={posting}/>
     ));
@@ -26,7 +26,7 @@ class PostingResults extends React.Component {
         <div className='posting-results-container cf'>
           <span className='jobs-header'>All Jobs</span>
           <ul className='posting-results-list'>
-            <li className='filters'>FILTER STUFF</li>
+            <li className='filters'>Filters are coming soon!</li>
             {results}
           </ul>
           <PostingDetailContainer />

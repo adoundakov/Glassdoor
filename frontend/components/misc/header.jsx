@@ -26,7 +26,7 @@ class Header extends React.Component {
     if (this.props.loggedIn) {
       profButton = (
         <div className='profile-drop-down-trigger'>
-          <a className='cf'></a>
+          <img src='http://flaticons.net/icons/Application/User-Profile.png' alt='profile'/>
           <ProfileDropDown logOut={this.logOut} currentUserId={this.props.currentUserId}/>
         </div>);
     } else {

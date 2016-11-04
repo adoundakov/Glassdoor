@@ -15,6 +15,7 @@ const PostingMiddleware = ({getState, dispatch}) => next => action => {
       fetchAllPostings(fetchAllSuccess);
       return next(action);
     case Actions.REQUEST_ONE_POSTING:
+      console.log('FETCHING!!' + action.id);
       fetchOnePosting(action.id, fetchOneSuccess);
       return next(action);
     default:

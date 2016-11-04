@@ -40,8 +40,7 @@
 }
 
 .profile-drop-down {
-  display: block;
-  /*display: none;  FOR TESTING */
+  display: none;
   width: 275px;
   background-color: #fff;
   flex-direction: column;
@@ -76,12 +75,15 @@
 }
 
 .profile-drop-down-trigger {
+  margin: 0 20px;
+}
+
+.profile-drop-down-trigger img {
   width: 20px;
   height: 20px;
-  overflow: hidden;
-  padding-bottom: 45px;
-  background-image: url("<%= asset_data_uri 'sprites_sitewide.png'%>");
-  background-repeat: no-repeat;
-  background-position: -198px -82px;
   display: inline-block;
+  position: relative;
+  margin-bottom: -32px;
+  z-index: 500;
+  border-bottom: 30px solid transparent;
 }
