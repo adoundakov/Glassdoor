@@ -3,8 +3,9 @@ export const REQUEST_ONE_POSTING = "REQUEST_ONE_POSTING";
 export const RECEIVE_ALL_POSTINGS = "RECEIVE_POSTINGS";
 export const RECEIVE_ONE_POSTING = "RECEIVE_POSTING";
 
-export const requestAllPostings = () => ({
-  type: REQUEST_ALL_POSTINGS
+export const requestAllPostings = (searchType) => ({
+  type: REQUEST_ALL_POSTINGS,
+  searchType
 });
 
 export const requestOnePosting = (id) => ({

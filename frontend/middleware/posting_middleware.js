@@ -12,7 +12,7 @@ const PostingMiddleware = ({getState, dispatch}) => next => action => {
 
   switch (action.type) {
     case Actions.REQUEST_ALL_POSTINGS:
-      fetchAllPostings(fetchAllSuccess);
+      fetchAllPostings(action.searchType, fetchAllSuccess);
       return next(action);
     case Actions.REQUEST_ONE_POSTING:
       console.log('FETCHING!!' + action.id);

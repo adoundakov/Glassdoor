@@ -41,7 +41,6 @@ const Root = ({ store }) => {
           <Route path='user/:userId'
                  component={UserProfile}
                  onEnter={_redirectIfWrongUser}/>
-
           <Route path='jobs' component={PostingResultsContainer}/>
           <Route path='companies' component={Companies}/>
         </Route>

@@ -1,6 +1,15 @@
 class Api::PostingsController < ApplicationController
   def index
-    @postings = Posting.all
+    case params[:search_type]
+    when "SAVED"
+      @postings = current_user.saved_postings
+    when "APPLIED"
+      @postings = current_user.applied_postings
+    when "SEARCH"
+      # Will implement later, PHASE 4
+    else
+      @postings = Posting.all
+    end
   end
 
   def show
@@ -18,7 +27,7 @@ class Api::PostingsController < ApplicationController
   private
 
   def posting_params
-    params.permit(:posting).require(:company_id,
+    params.require(:posting).permit(:company_id,
                                     :title,
                                     :position,
                                     :description)

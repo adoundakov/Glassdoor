@@ -32,7 +32,7 @@ class User < ApplicationRecord
   has_many :posting_applications
 
   has_many :saved_postings, through: :posting_saves, source: :posting
-  has_many :applied_positions, through: :posting_applications, source: :posting
+  has_many :applied_postings, through: :posting_applications, source: :posting
 
   def no_company_if_seeker
     if !is_employer && company_id != -1
