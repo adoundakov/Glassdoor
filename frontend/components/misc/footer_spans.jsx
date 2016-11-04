@@ -53,9 +53,6 @@ export const Middle = () => (
 export const Right = () => (
   <li>
     <div>
-      <span>
-        <text>Country Selector Coming Soon</text>
-      </span>
       <div>
         <a className='ios app-store'></a>
         <a className='android app-store'></a>

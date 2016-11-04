@@ -16,13 +16,15 @@ class PostingResults extends React.Component {
 
   render() {
     let results = this.props.postings.map((posting) => (
-      <PostingResultItem key={posting.id} posting={posting}/>
+      <PostingResultItem onClick= {() => this.requestOnePosting(posting.id)}
+                         key={posting.id}
+                         posting={posting}/>
     ));
 
     return (
-      <div className='results-pane cf'>
+      <div className='page-content cf'>
         <div className='posting-results-container cf'>
-          <span className='jobs header'>All Jobs</span>
+          <span className='jobs-header'>All Jobs</span>
           <ul className='posting-results-list'>
             <li className='filters'>FILTER STUFF</li>
             {results}

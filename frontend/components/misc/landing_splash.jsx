@@ -4,7 +4,7 @@ import Countdown from 'react-count-down';
 class TestComponent extends Component {
   render () {
     let OPTIONS = { endDate: '11/11/2016 06:00 PM',
-                    prefix: 'until easyHire is live!' };
+                    prefix: ' until easyHire is live!' };
     return (
       <div>
         <Countdown options={OPTIONS} />
