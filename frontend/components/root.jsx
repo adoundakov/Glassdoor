@@ -25,15 +25,24 @@ const Root = ({ store }) => {
     }
   };
 
+  const _redirectIfWrongUser = (nextState, replace) => {
+    _redirectIfLoggedOut(nextState, replace);
+    let currId = store.getState().session.currentUser.id;
+    if (nextState.params.userId != currId) {
+      replace(`/user/${currId}`);
+    }
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path={'/'} component={App}>
           <IndexRoute component={LandingSplash}/>
-          <Route path='user/:id'
+          <Route path='user/:userId'
                  component={UserProfile}
-                 onEnter={_redirectIfLoggedOut}/>
-               <Route path='jobs' component={PostingResultsContainer}/>
+                 onEnter={_redirectIfWrongUser}/>
+
+          <Route path='jobs' component={PostingResultsContainer}/>
           <Route path='companies' component={Companies}/>
         </Route>
       </Router>
