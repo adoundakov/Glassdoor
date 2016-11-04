@@ -5,8 +5,11 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import ConstructionSplash from './misc/construction';
 import LandingSplash from './misc/landing_splash';
-import UserProfile from './users/profile';
+import UserProfileContainer from './users/profile_container';
 import PostingResultsContainer from './postings/posting_results_container';
+import { requestAllPostings } from '../actions/posting_actions';
+import SavedJobsContainer from './users/saved_jobs_container';
+import AppliedJobsContainer from './users/applied_jobs_container';
 
 // TESTING -------------------------------------------------------------------
 import Companies from './companies/companies';
@@ -25,13 +28,20 @@ const Root = ({ store }) => {
     }
   };
 
+  const _reqTypePostings = (searchType) => {
+    store.dispatch(requestAllPostings(searchType));
+  };
+
   const _redirectIfWrongUser = (nextState, replace) => {
     _redirectIfLoggedOut(nextState, replace);
     let currId = store.getState().session.currentUser.id;
     if (nextState.params.userId != currId) {
       replace(`/user/${currId}`);
     }
+    let searchType = nextState.location.pathname.slice(8).toUpperCase();
+    _reqTypePostings(searchType);
   };
+
 
   return (
     <Provider store={store}>
@@ -39,8 +49,15 @@ const Root = ({ store }) => {
         <Route path={'/'} component={App}>
           <IndexRoute component={LandingSplash}/>
           <Route path='user/:userId'
-                 component={UserProfile}
-                 onEnter={_redirectIfWrongUser}/>
+                 component={UserProfileContainer}
+                 onEnter={_redirectIfWrongUser}>
+                 <Route path='saved'
+                        component={SavedJobsContainer}
+                        onEnter={_redirectIfWrongUser}/>
+                 <Route path='applied'
+                  component={AppliedJobsContainer}
+                  onEnter={_redirectIfWrongUser}/>
+          </Route>
           <Route path='jobs' component={PostingResultsContainer}/>
           <Route path='companies' component={Companies}/>
         </Route>
