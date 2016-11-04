@@ -3,7 +3,7 @@ import HeaderContainer from './misc/header_container';
 import Footer from './misc/footer';
 
 const App = ({ children }) => (
-  <div>
+  <div className='main'>
     <HeaderContainer />
     {children}
     <Footer/>
