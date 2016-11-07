@@ -1,3 +1,97 @@
 // Place all the styles related to the api/companies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.companies-header {
+  font-weight: 500;
+  font-size: 25px;
+  padding-bottom: 14px;
+  display: block;
+}
+
+.company-result-item {
+  border-bottom: 1px solid #ccc;
+  padding: 14px 0;
+}
+
+.company-results-container {
+  max-width: 1000px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 1px 1px 1px rgba(127,127,127,0.3);
+  box-sizing: border-box;
+  padding: 14px;
+}
+
+.company-nav-block {
+  float: right;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+.rating-summary {
+  color: #7CB228;
+  display: inline-block;
+  float: left;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 14px;
+}
+
+.company-name {
+  font-size: 20px;
+  display: block;
+}
+
+.company-nav {
+  display: flex;
+  flex-direction: column;
+  transition: background-color 250ms linear;
+  border-right: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+}
+
+.company-nav:hover {
+  background-color: #F1F1F1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.company-nav a:hover {
+  text-decoration: none;
+  color: #016DA3;
+}
+
+.anchor-nav {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-right a {
+  color: #fff;
+  background: #2c84cc;
+  box-shadow: 0 2px 0 0 #336c9b;
+  text-align: center;
+  padding: 0 21px;
+  display: inline-block;
+  transition: background 200ms;
+  border-radius: 3px;
+  line-height: 2.5em;
+  font-weight: 500;
+  position: relative;
+  top: -15px;
+}
+
+.info-right a:hover {
+  background: #016da3;
+  color: #fff;
+  text-decoration: none;
+}

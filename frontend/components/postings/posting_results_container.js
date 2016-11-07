@@ -8,10 +8,8 @@ const mapStateToProps = (state) => ({
   postings: selectAllPostings(state)
 });
 
-// limited for now, need to add requestSave/unSave posting
-
 const mapDispatchToProps = (dispatch) => ({
-  requestAllPostings: () => dispatch(requestAllPostings()),
+  requestAllPostings: (searchType) => dispatch(requestAllPostings(searchType)),
   requestOnePosting: (id) => dispatch(requestOnePosting(id))
 });
 

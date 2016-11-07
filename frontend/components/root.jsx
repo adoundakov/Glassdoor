@@ -7,15 +7,13 @@ import ConstructionSplash from './misc/construction';
 import LandingSplash from './misc/landing_splash';
 import UserProfileContainer from './users/profile_container';
 import PostingResultsContainer from './postings/posting_results_container';
-import { requestAllPostings,
-         requestOnePosting} from '../actions/posting_actions';
 import SavedJobsContainer from './users/saved_jobs_container';
 import AppliedJobsContainer from './users/applied_jobs_container';
 import StandalonePostingDetail from './postings/standalone_posting_detail';
-
-// TESTING -------------------------------------------------------------------
-import Companies from './companies/companies';
-// TESTING -------------------------------------------------------------------
+import CompanyResultsContainer from './companies/company_results_container';
+import CompanyDetailContainer from './companies/company_detail_container';
+import { requestAllPostings,
+  requestOnePosting} from '../actions/posting_actions';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -69,7 +67,11 @@ const Root = ({ store }) => {
           <Route path='detail/:postingId'
                  component={StandalonePostingDetail}
                  onEnter={_reqOnePosting}/>
-          <Route path='companies' component={Companies}/>
+          <Route path='companies' component={CompanyResultsContainer}>
+            <Route path=':companyId' component={CompanyDetailContainer}/>
+          </Route>
+          <Route path='reviews' component={ConstructionSplash}/>
+          <Route path='salaries' component={ConstructionSplash}/>
         </Route>
       </Router>
     </Provider>
