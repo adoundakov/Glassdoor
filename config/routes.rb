@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :show]
     resources :posting_saves, only: [:destroy]
-    resources :companies, only: [:create, :index, :show] # will add update at later time
-    resources :postings, only: [:create, :index, :show] do  # will add update / destroy at later time
+    resources :companies, only: [:index, :show] # will add update at later time
+    resources :postings, only: [:create, :index, :show] do # will add update / destroy at later time
       resources :posting_applications, only: [:create]
       resources :posting_saves, only: [:create]
     end

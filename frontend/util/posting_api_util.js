@@ -15,12 +15,11 @@ export const fetchOnePosting = (id, success) => {
    });
 };
 
-export const savePosting = (postingId, success, error) => {
+export const savePosting = (postingId, success) => {
   $.ajax({
      type: 'POST',
      url: `/api/postings/${postingId}/posting_saves`,
-     success,
-     error
+     success
    });
 };
 

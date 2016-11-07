@@ -1,4 +1,4 @@
-import * as Util from '../util/posting_api_util.js';
+import * as Util from '../util/posting_api_util';
 import * as Actions from '../actions/posting_actions';
 
 const PostingMiddleware = ({getState, dispatch}) => next => action => {
