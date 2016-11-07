@@ -1,4 +1,4 @@
-import {fetchAllPostings, fetchOnePosting} from '../util/posting_api_util.js';
+import * as Util from '../util/posting_api_util.js';
 import * as Actions from '../actions/posting_actions';
 
 const PostingMiddleware = ({getState, dispatch}) => next => action => {
@@ -12,14 +12,19 @@ const PostingMiddleware = ({getState, dispatch}) => next => action => {
 
   switch (action.type) {
     case Actions.REQUEST_ALL_POSTINGS:
-      fetchAllPostings(action.searchType, fetchAllSuccess);
+      Util.fetchAllPostings(action.searchType, fetchAllSuccess);
       return next(action);
     case Actions.REQUEST_ONE_POSTING:
-      fetchOnePosting(action.id, fetchOneSuccess);
+      Util.fetchOnePosting(action.id, fetchOneSuccess);
+      return next(action);
+    case Actions.SAVE_POSTING:
+      Util.savePosting(action.postingId, fetchOneSuccess);
+      return next(action);
+    case Actions.UN_SAVE_POSTING:
+      Util.unSavePosting(action.postingId, fetchOneSuccess);
       return next(action);
     default:
       return next(action);
-
   }
 };
 

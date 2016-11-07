@@ -38,10 +38,11 @@ const Root = ({ store }) => {
     }
   };
 
-  const _reqTypePostings = (nextState, replace) => {
-    _redirectIfWrongUser(nextState, replace);
-    let searchType = nextState.location.pathname.slice(8).toUpperCase();
-    store.dispatch(requestAllPostings(searchType));
+  const _reqTypePostings = (searchType) => {
+    return (nextState, replace) => {
+      _redirectIfWrongUser(nextState, replace);
+      store.dispatch(requestAllPostings(searchType));
+    };
   };
 
   const _reqOnePosting = (nextState, replace) => {
@@ -59,10 +60,10 @@ const Root = ({ store }) => {
                  onEnter={_redirectIfWrongUser}>
                  <Route path='saved'
                         component={SavedJobsContainer}
-                        onEnter={_reqTypePostings}/>
+                        onEnter={_reqTypePostings('SAVED')}/>
                  <Route path='applied'
                   component={AppliedJobsContainer}
-                  onEnter={_reqTypePostings}/>
+                  onEnter={_reqTypePostings('APPLIED')}/>
           </Route>
           <Route path='jobs' component={PostingResultsContainer}/>
           <Route path='detail/:postingId'

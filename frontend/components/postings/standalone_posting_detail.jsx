@@ -5,7 +5,7 @@ const StandalonePostingDetail = ({posting}) => {
   return (
     <div className='page-content cf'>
       <div className='standalone-detail-container cf'>
-        <PostingDetailContainer/>
+        <PostingDetailContainer width='100%'/>
       </div>
     </div>
   );

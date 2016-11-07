@@ -29,7 +29,7 @@ class PostingResults extends React.Component {
             <li className='filters'>Filters are coming soon!</li>
             {results}
           </ul>
-          <PostingDetailContainer />
+          <PostingDetailContainer width='67%'/>
         </div>
       </div>
     );

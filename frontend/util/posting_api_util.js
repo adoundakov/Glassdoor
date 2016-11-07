@@ -14,3 +14,21 @@ export const fetchOnePosting = (id, success) => {
      success
    });
 };
+
+export const savePosting = (postingId, success, error) => {
+  $.ajax({
+     type: 'POST',
+     url: `/api/postings/${postingId}/posting_saves`,
+     success,
+     error
+   });
+};
+
+export const unSavePosting = (postingId, success) => {
+  $.ajax({
+     type: 'DELETE',
+     url: '/api/posting_saves/1',   // need placeholder number, for rails route
+     data: {postingId},
+     success
+   });
+};

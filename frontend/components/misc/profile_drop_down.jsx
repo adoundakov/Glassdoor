@@ -5,7 +5,7 @@ const ProfileDropDown = ({logOut, currentUserId}) => {
   let pushUrl = url => (
     hashHistory.push(url)
   );
-
+  
   let signOut = () => {
     logOut();
     hashHistory.push('/');

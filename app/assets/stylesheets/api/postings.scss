@@ -222,6 +222,28 @@
   color: #000;
 }
 
+.unsave {
+  color: #000;
+  border: 1px solid #ccc;
+  border-bottom-width: 0;
+  box-shadow: 0 2px 0 0 #ccc;
+  background: #f1f1f1;
+  text-align: center;
+  padding: 0 14px;
+  display: inline-block;
+  transition: background 200ms;
+  border-radius: 3px;
+  line-height: 2.5em;
+  margin-left: 14px;
+  font-weight: 500;
+}
+
+.unsave:hover{
+  background-color: #e4e4e4;
+  text-decoration: none;
+  color: #000;
+}
+
 .apply:hover {
   background: #016da3;
   color: #fff;

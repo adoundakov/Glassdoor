@@ -1,9 +1,10 @@
 import merge from 'lodash/merge';
 import {RECEIVE_ONE_POSTING} from '../actions/posting_actions';
 
+
 const defaultPosting = {
   id: -1, external_url: null, title: '', position: '',
-  description: '', created_at: '', company: {}
+  description: '', created_at: '', company: {}, isSaved: false, isApplied: false
 };
 
 const PostingDetailReducer = (state = defaultPosting, action) => {
