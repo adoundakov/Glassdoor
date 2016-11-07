@@ -16,7 +16,7 @@ class PostingResults extends React.Component {
 
   render() {
     let results = this.props.postings.map((posting) => (
-      <PostingResultItem requestPosting={this.requestOnePosting}
+      <PostingResultItem postAction={this.requestOnePosting}
                          key={posting.id}
                          posting={posting}/>
     ));

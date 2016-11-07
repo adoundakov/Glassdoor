@@ -1,11 +1,10 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 
-const PostingResultItem = ({posting, requestPosting}) => {
+const PostingResultItem = ({posting, postAction}) => {
 
   const handleClick = (e) => {
-    requestPosting(posting.id);
-    console.log('CLICKED');
+    postAction(posting.id);
   };
 
   return (

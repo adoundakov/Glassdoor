@@ -261,3 +261,16 @@
   font-size: 12px;
   width: 50%;
 }
+
+.standalone-detail-container {
+  width: 70%;
+  max-width: 1000px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 1px 1px 1px rgba(127,127,127,0.3);
+  box-sizing: border-box;
+}
+
+.standalone-detail-container .posting-detail-container {
+  max-width: 100% !important;
+}

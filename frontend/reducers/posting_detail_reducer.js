@@ -11,7 +11,6 @@ const PostingDetailReducer = (state = defaultPosting, action) => {
 
   switch (action.type) {
     case RECEIVE_ONE_POSTING:
-      console.log('RECEIVING', action);
       return action.posting;
     default:
       return state;

@@ -7,9 +7,11 @@ import ConstructionSplash from './misc/construction';
 import LandingSplash from './misc/landing_splash';
 import UserProfileContainer from './users/profile_container';
 import PostingResultsContainer from './postings/posting_results_container';
-import { requestAllPostings } from '../actions/posting_actions';
+import { requestAllPostings,
+         requestOnePosting} from '../actions/posting_actions';
 import SavedJobsContainer from './users/saved_jobs_container';
 import AppliedJobsContainer from './users/applied_jobs_container';
+import StandalonePostingDetail from './postings/standalone_posting_detail';
 
 // TESTING -------------------------------------------------------------------
 import Companies from './companies/companies';
@@ -28,20 +30,24 @@ const Root = ({ store }) => {
     }
   };
 
-  const _reqTypePostings = (searchType) => {
-    store.dispatch(requestAllPostings(searchType));
-  };
-
   const _redirectIfWrongUser = (nextState, replace) => {
     _redirectIfLoggedOut(nextState, replace);
     let currId = store.getState().session.currentUser.id;
     if (nextState.params.userId != currId) {
       replace(`/user/${currId}`);
     }
-    let searchType = nextState.location.pathname.slice(8).toUpperCase();
-    _reqTypePostings(searchType);
   };
 
+  const _reqTypePostings = (nextState, replace) => {
+    _redirectIfWrongUser(nextState, replace);
+    let searchType = nextState.location.pathname.slice(8).toUpperCase();
+    store.dispatch(requestAllPostings(searchType));
+  };
+
+  const _reqOnePosting = (nextState, replace) => {
+    let postingId = nextState.params.postingId;
+    store.dispatch(requestOnePosting(postingId));
+  };
 
   return (
     <Provider store={store}>
@@ -53,12 +59,15 @@ const Root = ({ store }) => {
                  onEnter={_redirectIfWrongUser}>
                  <Route path='saved'
                         component={SavedJobsContainer}
-                        onEnter={_redirectIfWrongUser}/>
+                        onEnter={_reqTypePostings}/>
                  <Route path='applied'
                   component={AppliedJobsContainer}
-                  onEnter={_redirectIfWrongUser}/>
+                  onEnter={_reqTypePostings}/>
           </Route>
           <Route path='jobs' component={PostingResultsContainer}/>
+          <Route path='detail/:postingId'
+                 component={StandalonePostingDetail}
+                 onEnter={_reqOnePosting}/>
           <Route path='companies' component={Companies}/>
         </Route>
       </Router>
