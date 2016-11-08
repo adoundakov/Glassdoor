@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 class ApplicationForm extends React.Component {
   constructor(props) {
@@ -7,7 +7,6 @@ class ApplicationForm extends React.Component {
     this.createApplication = props.createApplication.bind(this);
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleSubmit(e) {
@@ -39,9 +38,11 @@ class ApplicationForm extends React.Component {
         <div className='application-form-container'>
           <div className='application-position-info'>
             <img src={company.logo_url} alt={company.name}/>
-            <div>{this.props.posting.title}</div>
-            <div>{company.name}</div>
-            <div>{company.location}</div>
+            <div className='application-info-box'>
+              <h3>{this.props.posting.title}</h3>
+              <div>{company.name}</div>
+              <div>{company.location}</div>
+            </div>
           </div>
           <form className='application-form'>
             <textarea placeholder='Resume'

@@ -36,7 +36,11 @@ class Header extends React.Component {
     return (
       <div className='header-background'>
         <section className='header'>
-          <h3 onClick={() => hashHistory.push('/')}>easyHire</h3>
+          <div className='header-group'
+               onClick={() => hashHistory.push('/')}>
+            <div className='header-icon'>{''}</div>
+            <h3>easyHire</h3>
+          </div>
           <Nav />
           {profButton}
           <Modal

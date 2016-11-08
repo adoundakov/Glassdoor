@@ -18,7 +18,7 @@ const CompanyHeader = ({company}) => {
         <div className='company-header-nav'>
           <Scrollchor to='#overview'>
             <div className='company-nav'>
-              <text>{'<icon>'}</text>Overview
+              <div className='nav-icon'>{''}</div>Overview
             </div>
           </Scrollchor>
           <Scrollchor to='#reviews'>
