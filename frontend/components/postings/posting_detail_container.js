@@ -5,7 +5,7 @@ import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
   posting: state.postingDetail,
-  currentUser: state.currentUser
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

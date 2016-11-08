@@ -15,7 +15,7 @@ class PostingDetail extends React.Component {
 
   handleSave(e) {
     e.preventDefault();
-    if (this.props.currentUser) {
+    if (this.props.currentUser !== null) {
       if (this.props.posting.isSaved) {
         this.unSavePosting(this.props.posting.id);
       } else {
@@ -28,7 +28,7 @@ class PostingDetail extends React.Component {
 
   handleApply(e) {
     e.preventDefault();
-    if (this.props.currentUser) {
+    if (this.props.currentUser !== null) {
       hashHistory.push('/apply');
     } else {
       this.openModal();
@@ -43,7 +43,7 @@ class PostingDetail extends React.Component {
     let savedClass;
     let savedText;
 
-    if (!this.props.currentUser && posting.isSaved) {
+    if (this.props.currentUser !== null && posting.isSaved) {
       savedClass = 'unsave';
       savedText = 'Saved';
     } else {
