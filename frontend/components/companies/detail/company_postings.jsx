@@ -14,7 +14,7 @@ const CompanyPostings = ({companyName, postings}) => {
 
   return (
     <div className='company-sidebar'>
-      <h3>Positions at {companyName}</h3>
+      <h3 id='postings'>Positions at {companyName}</h3>
       <ul className='company-postings'>
         {listings}
       </ul>

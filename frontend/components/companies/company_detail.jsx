@@ -18,12 +18,12 @@ class CompanyDetail extends React.Component {
           <div className='company-description'>
             {this.props.company.description}
           </div>
-          <div className='reviews'>
+          <div id='reviews' className='reviews'>
             <p className='text-overlay'>Reviews</p>
             <ConstructionSplash />
           </div>
 
-          <div className='salaries'>
+          <div id='salaries' className='salaries'>
             <p className='text-overlay'>Salaries</p>
             <ConstructionSplash />
           </div>

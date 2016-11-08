@@ -1,6 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import CompanyOverview from '../companies/detail/company_overview';
+import Scrollchor from 'react-scrollchor';
 
 class PostingDetail extends React.Component {
   constructor(props) {
@@ -72,8 +73,8 @@ class PostingDetail extends React.Component {
             </div>
             <div className='anchor-nav'>
               <div className='nav'>
-                <a>Description</a>
-                <a>Company</a>
+                <Scrollchor to='#description'>Description</Scrollchor>
+                <Scrollchor to='#overview'>Company</Scrollchor>
               </div>
               <div className='anchor'>
                 {applyLink}
@@ -83,7 +84,7 @@ class PostingDetail extends React.Component {
             </div>
           </div>
           <div className='detail-content'>
-            <div className='description'>
+            <div id='description' className='description'>
               {posting.description}
             </div>
             <CompanyOverview company={company} width={'100%'}/>

@@ -7,10 +7,10 @@ class ApplicationForm extends React.Component {
     this.createApplication = props.createApplication.bind(this);
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleSubmit(e) {
-    e.preventDefault();
     this.props.createApplication(this.state);
   }
 
@@ -21,8 +21,15 @@ class ApplicationForm extends React.Component {
     };
   }
 
+  // for file upload bonus feature later.
+  //
+  // handleUpload(e) {
+  //   window.cloudinary.openUploadWidget(
+  //     window.CLOUDINARY_OPTIONS,
+  //     (...args) => this.handleSubmit(...args)
+  //   );
+  // }
 
-  // maybe include some simplified posting header? just title, logo, company
   // {this.props.errors}
 
   render () {

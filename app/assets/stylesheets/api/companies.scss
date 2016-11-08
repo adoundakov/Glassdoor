@@ -57,15 +57,19 @@
   padding: 14px;
 }
 
+.company-nav text {
+  color: #404040;
+  text-decoration: none;
+}
+
 .company-nav:hover {
   background-color: #F1F1F1;
-  text-decoration: none;
+  text-decoration: none !important;
   cursor: pointer;
 }
 
-.company-nav a:hover {
+.company-header-nav a:hover {
   text-decoration: none;
-  color: #016DA3;
 }
 
 .anchor-nav {

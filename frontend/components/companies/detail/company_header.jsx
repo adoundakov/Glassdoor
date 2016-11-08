@@ -1,4 +1,6 @@
 import React from 'react';
+import Scrollchor from 'react-scrollchor';
+
 // let company cover use bg images
 // <img src={company.cover_url} alt={company.name}/>
 const CompanyHeader = ({company}) => {
@@ -14,10 +16,26 @@ const CompanyHeader = ({company}) => {
       </div>
       <div className='detail-anchor-nav cf'>
         <div className='company-header-nav'>
-          <div className='company-nav'>{'<icon>'}<a>Overview</a></div>
-          <div className='company-nav'>22k<a>Reviews</a></div>
-          <div className='company-nav'>62<a>Positions</a></div>
-          <div className='company-nav'>147<a>Salaries</a></div>
+          <Scrollchor to='#overview'>
+            <div className='company-nav'>
+              <text>{'<icon>'}</text>Overview
+            </div>
+          </Scrollchor>
+          <Scrollchor to='#reviews'>
+            <div className='company-nav'>
+              <text>22k</text>Reviews
+            </div>
+          </Scrollchor>
+          <Scrollchor to='#postings'>
+            <div className='company-nav'>
+              <text>62</text>Positions
+            </div>
+          </Scrollchor>
+          <Scrollchor to='#salaries'>
+            <div className='company-nav'>
+              <text>147</text>Salaries
+            </div>
+          </Scrollchor>
         </div>
         <div className='header-review'><a>Add a Review</a></div>
       </div>
