@@ -15,7 +15,9 @@ class CompanyResults extends React.Component {
 
   render () {
     let results = this.props.companies.map((company) => (
-      <CompanyResultItem key={company.id} company={company}/>
+      <CompanyResultItem key={company.id}
+                         company={company}
+                         requestOneCompany={this.requestOneCompany}/>
     ));
 
     return (

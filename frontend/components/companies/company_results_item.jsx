@@ -1,7 +1,15 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 
-const CompanyResultItem = ({company}) => {
+const CompanyResultItem = ({company, requestOneCompany}) => {
+
+  let handleClick = id => (
+    e => {
+      e.preventDefault();
+      requestOneCompany(id);
+      hashHistory.push(`/company/${id}`);
+    });
+
   return (
     <li className='company-result-item cf'>
       <div className='company-result-header cf'>
@@ -12,7 +20,7 @@ const CompanyResultItem = ({company}) => {
           </div>
           <div className='info cf'>
             <a className='company-name'
-                onClick={() => hashHistory.push(`/companies/${company.id}`)}>
+                onClick={handleClick(company.id)}>
                 {company.name}
             </a>
             <div className='info-left'>{company.location} | {company.company_url}</div>

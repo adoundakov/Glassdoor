@@ -95,3 +95,161 @@
   color: #fff;
   text-decoration: none;
 }
+
+.company-detail-container {
+  max-width: 1000px;
+  width: 80%;
+  margin: 14px auto;
+}
+
+.company-header {
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 1px rgba(127, 127, 127, 0.3);
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.company-overview {
+  margin-bottom: 14px;
+  width: calc(67% - 14px);
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 1px rgba(127, 127, 127, 0.3);
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 14px;
+  padding: 14px;
+}
+
+.reviews {
+  width: calc(67% - 14px);
+  position: relative;
+  max-height: 400px;
+  margin-bottom: 14px;
+  padding: 14px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 1px rgba(127, 127, 127, 0.3);
+  background-color: #fff;
+}
+
+.salaries {
+  position: relative;
+  width: calc(67% - 14px);
+  max-height: 400px;
+  margin-bottom: 14px;
+  padding: 14px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 1px rgba(127, 127, 127, 0.3);
+  background-color: #fff;
+}
+
+.company-sidebar {
+  position: relative;
+  float: right;
+  width: 33%;
+  margin-bottom: 14px;
+  padding: 14px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 1px rgba(127, 127, 127, 0.3);
+  background-color: #fff;
+}
+
+.company-description {
+  position: relative;
+  width: calc(67% - 14px);
+  max-height: 400px;
+  margin-bottom: 14px;
+  padding: 14px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 1px rgba(127, 127, 127, 0.3);
+  background-color: #fff;
+}
+
+.company-header-nav {
+  float: left;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+.company-cover {
+  background: linear-gradient(200deg, rgba(124,178,40,0.9) 0%, rgba(80,179,226,0.9) 100%);
+  height: 185px;
+  width: 100%;
+}
+
+.info-div .logo-container {
+  float: left;
+  box-sizing: border-box;
+}
+
+.info-div h2 {
+  float: left;
+  box-sizing: border-box;
+  padding: 14px 14px 14px 28px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.header-review {
+  display: inline-block;
+  float: right;
+  padding: 14px 0;
+}
+
+.header-review a {
+  color: #fff;
+  background: #2c84cc;
+  box-shadow: 0 2px 0 0 #336c9b;
+  text-align: center;
+  padding: 0 21px;
+  display: inline-block;
+  transition: background 200ms;
+  border-radius: 3px;
+  line-height: 2em;
+  font-weight: 500;
+  position: relative;
+  font-size: 14px;
+  top: 10px;
+}
+
+.header-review a:hover {
+  background: #016da3;
+  color: #fff;
+  text-decoration: none;
+}
+
+.detail-anchor-nav {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: block;
+  width: 100%;
+  float: left;
+  padding: 0 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.text-overlay {
+  position: absolute;
+  top: 50px;
+  left: 250px;
+  font-weight: 500;
+  font-size: 26px;
+  font-family: 'Helvetica Neue';
+}

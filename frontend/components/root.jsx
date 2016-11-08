@@ -12,8 +12,10 @@ import AppliedJobsContainer from './users/applied_jobs_container';
 import StandalonePostingDetail from './postings/standalone_posting_detail';
 import CompanyResultsContainer from './companies/company_results_container';
 import CompanyDetailContainer from './companies/company_detail_container';
+
 import { requestAllPostings,
   requestOnePosting} from '../actions/posting_actions';
+import { requestOneCompany } from '../actions/company_actions';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -48,6 +50,11 @@ const Root = ({ store }) => {
     store.dispatch(requestOnePosting(postingId));
   };
 
+  const _reqOneCompany = (nextState, replace) => {
+    let companyId = nextState.params.companyId;
+    store.dispatch(requestOneCompany(companyId));
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -67,9 +74,10 @@ const Root = ({ store }) => {
           <Route path='detail/:postingId'
                  component={StandalonePostingDetail}
                  onEnter={_reqOnePosting}/>
-          <Route path='companies' component={CompanyResultsContainer}>
-            <Route path=':companyId' component={CompanyDetailContainer}/>
-          </Route>
+          <Route path='companies' component={CompanyResultsContainer}/>
+          <Route path='company/:companyId'
+                 component={CompanyDetailContainer}
+                 onEnter={_reqOneCompany}/>
           <Route path='reviews' component={ConstructionSplash}/>
           <Route path='salaries' component={ConstructionSplash}/>
         </Route>
