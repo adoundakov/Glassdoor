@@ -235,7 +235,34 @@
   padding: 0 14px;
 }
 
+.overview-table {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1em;
+  font-size: 14px;
+  width: 100%;
+  padding-top: 14px;
+}
 
+.row {
+  padding: 0 7px 7px 0;
+  width: 50%;
+  line-height: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.key {
+  width: 120px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.value {
+  width: 120px;
+  text-align: right;
+}
 
 
 
