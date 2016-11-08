@@ -18,12 +18,10 @@ class LogInForm extends React.Component {
 
   handleLogIn() {
     this.props.logIn(this.state);
-    this.props.closeModal();
   }
 
   handleGuest() {
     this.props.logIn({username: 'guestSeeker', password: '123456'});
-    this.props.closeModal();
   }
 
   render() {
@@ -33,12 +31,12 @@ class LogInForm extends React.Component {
     return (
       <section className="auth-form">
         <text>Sign in to get instant access to millions of salaries and reviews</text>
-        <form>
+          <form onSubmit={this.handleLogIn}>
           <input type='text' placeholder='Username' onChange={this.update('username')}/><br/>
           <input type='password' placeholder='Password' onChange={this.update('password')}/><br/>
-          {errors}
+          {errors} <br/>
           <p className='guest-login' onClick={this.handleGuest}>Log In as Guest</p>
-          <a onClick={this.handleLogIn}>Sign In</a>
+            <button type='submit' onClick={this.handleLogIn}>Sign In</button>
         </form>
       </section>
     );

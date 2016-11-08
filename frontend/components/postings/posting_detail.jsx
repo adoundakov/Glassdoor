@@ -10,30 +10,46 @@ class PostingDetail extends React.Component {
     this.unSavePosting = props.unSavePosting.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.handleApply = this.handleApply.bind(this);
+    this.openModal = props.openModal.bind(this);
   }
 
   handleSave(e) {
     e.preventDefault();
-    if (this.props.posting.isSaved) {
-      this.unSavePosting(this.props.posting.id);
+    if (this.props.currentUser) {
+      if (this.props.posting.isSaved) {
+        this.unSavePosting(this.props.posting.id);
+      } else {
+        this.savePosting(this.props.posting.id);
+      }
     } else {
-      this.savePosting(this.props.posting.id);
+      this.openModal();
     }
   }
 
   handleApply(e) {
     e.preventDefault();
-    hashHistory.push('/apply');
+    if (this.props.currentUser) {
+      hashHistory.push('/apply');
+    } else {
+      this.openModal();
+    }
   }
 
   render() {
     let posting = this.props.posting;
     let company = posting.company;
-    let savedClass = posting.isSaved ? 'unsave' : 'save';
-    let savedText = posting.isSaved ? 'Saved' : 'Save';
-
     this.blurOverlay = '';
     let applyLink;
+    let savedClass;
+    let savedText;
+
+    if (!this.props.currentUser && posting.isSaved) {
+      savedClass = 'unsave';
+      savedText = 'Saved';
+    } else {
+      savedClass = 'save';
+      savedText = 'Save';
+    }
 
     if (posting.id === -1) {
       this.containerClass = 'posting-detail-container blur cf';
@@ -45,7 +61,7 @@ class PostingDetail extends React.Component {
       this.containerClass = 'posting-detail-container cf';
     }
 
-    if (posting.isApplied) {
+    if (!this.props.currentUser && posting.isApplied) {
       applyLink = <a className='apply disabled'>Applied</a>;
     } else {
       applyLink = <a className='apply' onClick={this.handleApply}>

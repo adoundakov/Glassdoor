@@ -44,7 +44,8 @@ class Header extends React.Component {
           <Nav />
           {profButton}
           <Modal
-            style={{transition: 'opacity 100ms', padding: '0'}}
+            style={{transition: 'opacity 100ms linear'}}
+            containerStyle={{padding: '0'}}
             transitionSpeed={125}
             closeOnOuterClick={true}
             show={this.props.modal}

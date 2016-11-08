@@ -17,7 +17,6 @@ class SignUpForm extends React.Component {
 
   handleSignUp() {
     this.props.signUp(this.state);
-    this.props.closeModal();
   }
 
   render() {
@@ -27,12 +26,12 @@ class SignUpForm extends React.Component {
     return (
       <section className="auth-form">
         <text>Sign up to get instant access to millions of salaries and reviews</text>
-        <form>
+        <form onSubmit={this.handleSignUp}>
           <input type='text' placeholder='Username' onChange={this.update('username')}/><br/>
           <input type='text' placeholder='Email' onChange={this.update('email')}/><br/>
           <input type='password' placeholder='Password' onChange={this.update('password')}/><br/>
-          {errors}
-          <a onClick={this.handleSignUp}>Sign Up</a>
+          {errors} <br/>
+        <button type='submit' onClick={this.handleSignup}>Sign Up</button>
         </form>
       </section>
     );
