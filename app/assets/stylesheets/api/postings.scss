@@ -200,8 +200,26 @@
   font-weight: 500;
 }
 
+.apply:hover {
+  background: #016da3;
+  color: #404040;
+  text-decoration: none;
+}
+
+.disabled {
+  color: #404040;
+  background: #f1f1f1;
+  box-shadow: 0 2px 0 0 #ccc;
+  border: 1px solid #ccc;
+}
+
+.disabled:hover {
+  text-decoration: none;
+  background: #f1f1f1;
+  cursor: not-allowed;
+}
 .save {
-  color: #000;
+  color: #404040;
   border: 1px solid #ccc;
   border-bottom-width: 0;
   box-shadow: 0 2px 0 0 #ccc;
@@ -219,11 +237,11 @@
 .save:hover{
   background-color: #e4e4e4;
   text-decoration: none;
-  color: #000;
+  color: #404040;
 }
 
 .unsave {
-  color: #000;
+  color: #404040;
   border: 1px solid #ccc;
   border-bottom-width: 0;
   box-shadow: 0 2px 0 0 #ccc;
@@ -241,13 +259,7 @@
 .unsave:hover{
   background-color: #e4e4e4;
   text-decoration: none;
-  color: #000;
-}
-
-.apply:hover {
-  background: #016da3;
-  color: #fff;
-  text-decoration: none;
+  color: #404040;
 }
 
 .detail-content {

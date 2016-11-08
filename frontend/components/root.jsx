@@ -12,6 +12,7 @@ import AppliedJobsContainer from './users/applied_jobs_container';
 import StandalonePostingDetail from './postings/standalone_posting_detail';
 import CompanyResultsContainer from './companies/company_results_container';
 import CompanyDetailContainer from './companies/company_detail_container';
+import ApplicationFormContainer from './application/application_form_container';
 
 import { requestAllPostings,
   requestOnePosting} from '../actions/posting_actions';
@@ -55,6 +56,14 @@ const Root = ({ store }) => {
     store.dispatch(requestOneCompany(companyId));
   };
 
+  const _redirectIfNoDetail = (nextState, replace) => {
+    _redirectIfLoggedOut(nextState, replace);
+    let postingDetail = store.getState().postingDetail;
+    if (postingDetail.id === -1) {
+      replace(`/jobs`);
+    }
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -80,6 +89,9 @@ const Root = ({ store }) => {
                  onEnter={_reqOneCompany}/>
           <Route path='reviews' component={ConstructionSplash}/>
           <Route path='salaries' component={ConstructionSplash}/>
+          <Route path='apply'
+                 component={ApplicationFormContainer}
+                 onEnter={_redirectIfNoDetail}/>
         </Route>
       </Router>
     </Provider>

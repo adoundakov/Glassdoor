@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 class PostingDetail extends React.Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class PostingDetail extends React.Component {
     this.savePosting = props.savePosting.bind(this);
     this.unSavePosting = props.unSavePosting.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    this.handleApply = this.handleApply.bind(this);
   }
 
   handleSave(e) {
@@ -17,17 +19,21 @@ class PostingDetail extends React.Component {
     }
   }
 
+  handleApply(e) {
+    e.preventDefault();
+    hashHistory.push('/apply');
+  }
+
   render() {
     let posting = this.props.posting;
     let company = posting.company;
     let savedClass = posting.isSaved ? 'unsave' : 'save';
     let savedText = posting.isSaved ? 'Saved' : 'Save';
 
-    // TODO: Add disable if already applied
-
     this.blurOverlay = '';
+    let applyLink;
 
-    if (this.props.posting.id === -1) {
+    if (posting.id === -1) {
       this.containerClass = 'posting-detail-container blur cf';
       this.blurOverlay = <div className='blur-overlay'>
                           <h3>Click a Job To View Here</h3>
@@ -35,6 +41,14 @@ class PostingDetail extends React.Component {
                         </div>;
     } else {
       this.containerClass = 'posting-detail-container cf';
+    }
+
+    if (posting.isApplied) {
+      applyLink = <a className='apply disabled'>Applied</a>;
+    } else {
+      applyLink = <a className='apply' onClick={this.handleApply}>
+                    Apply on easyHire
+                  </a>;
     }
 
     return (
@@ -61,7 +75,7 @@ class PostingDetail extends React.Component {
                 <a>Company</a>
               </div>
               <div className='anchor'>
-                <a className='apply'>Apply on easyHire</a>
+                {applyLink}
                 <a className={savedClass}
                    onClick={this.handleSave}>{savedText}</a>
               </div>
