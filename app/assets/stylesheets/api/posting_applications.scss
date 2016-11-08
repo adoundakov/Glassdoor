@@ -1,3 +1,37 @@
 // Place all the styles related to the api/posting_applications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.application-form-container {
+  max-width: 1000px;
+  width: 80%;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 1px 1px 1px rgba(127,127,127,0.3);
+  box-sizing: border-box;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.application-position-info img{
+  background-color: #fff;
+  width: 90px;
+  height: 90px;
+  padding: 3px;
+  border: 1px solid #DEDEDE;
+  display: inline-block;
+  float: left;
+  margin-right: 14px;
+}
+
+.application-position-info {
+  float: left;
+  padding-left: 14px;
+  padding-bottom: 14px;
+}
+
+.application-form {
+  padding: 14px 0;
+}

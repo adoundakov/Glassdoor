@@ -26,22 +26,27 @@ class ApplicationForm extends React.Component {
   // {this.props.errors}
 
   render () {
+    let company = this.props.posting.company;
     return (
-      <div className='application-form-container'>
-        <div className='application-position-info'>
-          <div>{this.props.posting.title}</div>
-          <div>{this.props.posting.company.name}</div>
-          <div>{this.props.posting.company.location}</div>
+      <div className='page-content cf'>
+        <div className='application-form-container'>
+          <div className='application-position-info'>
+            <img src={company.logo_url} alt={company.name}/>
+            <div>{this.props.posting.title}</div>
+            <div>{company.name}</div>
+            <div>{company.location}</div>
+          </div>
+          <form className='application-form'>
+            <textarea placeholder='Resume'
+                      onChange={this.update('resume')}
+                      value={this.state.resume}/>
+            <br/>
+            <a className='apply'
+               onClick={this.handleSubmit}>
+               Apply for Position
+            </a>
+          </form>
         </div>
-        <form className='application-form'>
-          <textarea placeholder='Resume'
-                    onChange={this.update('resume')}
-                    value={this.state.resume}/>
-          <a className='apply'
-             onClick={this.handleSubmit}>
-             Apply for Position
-          </a>
-        </form>
       </div>
     );
   }

@@ -253,14 +253,14 @@
 }
 
 .key {
-  width: 120px;
+  width: 50%;
   text-align: left;
   vertical-align: middle;
   font-weight: bold;
 }
 
 .value {
-  width: 120px;
+  width: 160px;
   text-align: right;
 }
 
@@ -274,8 +274,8 @@
 
 .text-overlay {
   position: absolute;
-  top: 50px;
-  left: 250px;
+  top: 10%;
+  left: 42%;
   font-weight: 500;
   font-size: 26px;
   font-family: 'Helvetica Neue';

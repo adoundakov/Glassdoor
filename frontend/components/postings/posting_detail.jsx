@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import CompanyOverview from '../companies/detail/company_overview';
 
 class PostingDetail extends React.Component {
   constructor(props) {
@@ -82,7 +83,10 @@ class PostingDetail extends React.Component {
             </div>
           </div>
           <div className='detail-content'>
-            {posting.description}
+            <div className='description'>
+              {posting.description}
+            </div>
+            <CompanyOverview company={company} width={'100%'}/>
           </div>
         </div>
       </div>

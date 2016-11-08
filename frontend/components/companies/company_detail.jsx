@@ -13,7 +13,8 @@ class CompanyDetail extends React.Component {
           <CompanyHeader company={this.props.company}/>
           <CompanyPostings companyName={this.props.company.name}
                            postings={this.props.company.postings}/>
-          <CompanyOverview company={this.props.company}/>
+          <CompanyOverview company={this.props.company}
+                           width={''}/>
           <div className='company-description'>
             {this.props.company.description}
           </div>

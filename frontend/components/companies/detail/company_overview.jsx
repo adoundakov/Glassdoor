@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CompanyOverview = ({company}) => {
+const CompanyOverview = ({company, width}) => {
   return (
-    <div className='company-overview'>
+    <div className='company-overview' style={{width: width}}>
       <h3>{company.name} Overview</h3>
       <div className='overview-table'>
         <div className='row'>
