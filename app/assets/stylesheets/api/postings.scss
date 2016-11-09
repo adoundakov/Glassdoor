@@ -80,6 +80,7 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 14px 0 14px 14px;
+  width: 100%;
 }
 
 .img-box {
@@ -340,4 +341,12 @@
   width: 2px;
   background: #ccc;
   height: 100%;
+}
+
+.posting-info-span {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: #aaa;
+  font-size: 12px;
 }

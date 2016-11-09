@@ -87,7 +87,10 @@ const Root = ({ store }) => {
           <Route path='company/:companyId'
                  component={CompanyDetailContainer}
                  onEnter={_reqOneCompany}/>
-          <Route path='reviews' component={ConstructionSplash}/>
+          <Route path='reviews/:companyId'
+                 component={ConstructionSplash}/>
+          <Route path='reviews/:companyId/new'
+                 component={ConstructionSplash}/>
           <Route path='salaries' component={ConstructionSplash}/>
           <Route path='apply'
                  component={ApplicationFormContainer}

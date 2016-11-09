@@ -83,7 +83,7 @@ class PostingDetail extends React.Component {
                 <h3>{posting.title}</h3>
                 <div className='job-info'>
                   <div className='info-left'>{company.name} | {company.location}</div>
-                  <div className='info-right'>POSTED 3 DAYS AGO</div>
+                  <div className='info-right'>{posting.age} ago</div>
                 </div>
               </div>
             </div>

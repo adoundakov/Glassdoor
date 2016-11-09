@@ -22,4 +22,11 @@ class Company < ApplicationRecord
   validates :size, inclusion: { in: SIZES }
 
   has_many :postings
+  has_many :reviews
+
+  def average_rating
+    ratings = []
+    self.reviews.map { |review| ratings << review.rating }
+    ratings.empty? ? '--' : (ratings.inject(:+) / ratings.size.to_f).to_s
+  end
 end

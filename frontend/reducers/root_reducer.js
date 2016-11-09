@@ -7,6 +7,7 @@ import PostingDetailReducer from './posting_detail_reducer';
 import CompanyReducer from './company_reducer';
 import CompanyDetailReducer from './company_detail_reducer';
 import ApplicationReducer from './application_reducer';
+import ReviewReducer from './review_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -15,7 +16,8 @@ const RootReducer = combineReducers({
   postings: PostingReducer,
   companies: CompanyReducer,
   companyDetail: CompanyDetailReducer,
-  application: ApplicationReducer
+  application: ApplicationReducer,
+  reviews: ReviewReducer
 });
 
 export default RootReducer;

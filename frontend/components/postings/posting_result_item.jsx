@@ -16,7 +16,10 @@ const PostingResultItem = ({posting, postAction}) => {
       <div className='posting-info'>
         <span className='posting-result-title'>{posting.title}</span>
         <span>{posting.company.name}</span>
-        <span style={{fontSize: 12}}>{posting.company.location}</span>
+        <div className='posting-info-span'>
+          <span>{posting.company.location}</span>
+          <span>{posting.age} ago</span>
+        </div>
       </div>
     </li>
   );

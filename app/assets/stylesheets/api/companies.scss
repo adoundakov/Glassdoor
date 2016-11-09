@@ -154,7 +154,7 @@
   float: right;
   width: 33%;
   margin-bottom: 14px;
-  padding: 14px;
+  padding: 14px 0;
   border-radius: 2px;
   box-shadow: 0 1px 1px 1px rgba(127, 127, 127, 0.3);
   background-color: #fff;
@@ -275,7 +275,9 @@
   background-size: cover;
 }
 
-
+#postings {
+  padding-left: 14px;
+}
 
 
 

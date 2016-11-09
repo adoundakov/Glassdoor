@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CompanyOverview = ({company, width}) => {
+  // let handleClick = () => (window.location = company.company_url);
   return (
     <div className='company-overview' style={{width: width}}>
       <h3 id='overview'>{company.name} Overview</h3>

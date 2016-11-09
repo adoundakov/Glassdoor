@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 // TESTING -------------------------------------------------------------------
-import * as Actions from './actions/application_actions';
-import * as Util from './util/application_api_util';
+import * as Actions from './actions/review_actions';
+import * as Util from './util/review_api_util';
 // TESTING -------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -30,6 +30,7 @@ class User < ApplicationRecord
     foreign_key: :user_id
 
   has_many :posting_applications
+  has_many :reviews
 
   has_many :saved_postings, through: :posting_saves, source: :posting
   has_many :applied_postings, through: :posting_applications, source: :posting

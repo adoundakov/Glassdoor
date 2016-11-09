@@ -1,5 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import {values} from 'lodash';
+import ReactStars from 'react-stars';
 
 const CompanyResultItem = ({company, requestOneCompany}) => {
 
@@ -9,6 +11,14 @@ const CompanyResultItem = ({company, requestOneCompany}) => {
       requestOneCompany(id);
       hashHistory.push(`/company/${id}`);
     });
+
+  let goToReviews = id => (
+    e => {
+      e.preventDefault();
+      requestOneCompany(id);
+      hashHistory.push(`reviews/${id}`);
+    }
+  );
 
   return (
     <li className='company-result-item cf'>
@@ -26,11 +36,22 @@ const CompanyResultItem = ({company, requestOneCompany}) => {
             <div className='info-left'>{company.location} | {company.company_url}</div>
             <div className='info-right'><a>Add a Review</a></div>
             <div className='anchor-nav cf'>
-              <div className='rating-summary'>3.2 / 5</div>
+              <div className='rating-summary'>
+                <ReactStars count={5}
+                            value={company.average_rating}
+                            color1={'#404040'}
+                            color2={'#86B73B'}
+                            edit={false}
+                            />
+                          {company.average_rating}
+              </div>
               <div className='company-nav-block cf'>
-                <div className='company-nav'>22k<a>Reviews</a></div>
-                <div className='company-nav'>62<a>Positions</a></div>
-                <div className='company-nav'>147<a>Salaries</a></div>
+                <div className='company-nav'
+                     onClick={goToReviews(company.id)}>{company.numReviews}<a>Reviews</a></div>
+                <div className='company-nav'
+                     onClick={handleClick(company.id)}>{company.numPostings}<a>Positions</a></div>
+                <div className='company-nav'
+                     onClick={handleClick(company.id)}>147<a>Salaries</a></div>
               </div>
             </div>
           </div>

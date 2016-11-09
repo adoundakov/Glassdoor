@@ -23,12 +23,12 @@ const CompanyHeader = ({company}) => {
           </Scrollchor>
           <Scrollchor to='#reviews'>
             <div className='company-nav'>
-              <text>22k</text>Reviews
+              <text>{company.numReviews}</text>Reviews
             </div>
           </Scrollchor>
           <Scrollchor to='#postings'>
             <div className='company-nav'>
-              <text>62</text>Positions
+              <text>{company.numPostings}</text>Positions
             </div>
           </Scrollchor>
           <Scrollchor to='#salaries'>
