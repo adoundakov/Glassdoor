@@ -7,6 +7,7 @@ class CompanyResults extends React.Component {
     super(props);
     this.requestAllCompanies = props.requestAllCompanies.bind(this);
     this.requestOneCompany = props.requestOneCompany.bind(this);
+    this.openModal = props.openModal.bind(this);
   }
 
   componentWillMount() {
@@ -17,7 +18,9 @@ class CompanyResults extends React.Component {
     let results = this.props.companies.map((company) => (
       <CompanyResultItem key={company.id}
                          company={company}
-                         requestOneCompany={this.requestOneCompany}/>
+                         requestOneCompany={this.requestOneCompany}
+                         openModal={this.openModal}
+                         currentUser={this.props.currentUser}/>
     ));
 
     return (

@@ -1,8 +1,14 @@
 import { connect } from 'react-redux';
 import CompanyDetail from './company_detail';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
-   company: state.companyDetail
+   company: state.companyDetail,
+   currentUser: state.session.currentUser
  });
 
-export default connect(mapStateToProps)(CompanyDetail);
+ const mapDispatchToProps = (dispatch) => ({
+    openModal: () => dispatch(openModal())
+ });
+
+export default connect(mapStateToProps, mapDispatchToProps)(CompanyDetail);

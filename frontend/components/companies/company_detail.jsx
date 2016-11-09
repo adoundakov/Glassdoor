@@ -10,7 +10,9 @@ class CompanyDetail extends React.Component {
     return (
       <div className='page-content cf'>
         <div className='company-detail-container'>
-          <CompanyHeader company={this.props.company}/>
+          <CompanyHeader company={this.props.company}
+                         openModal={this.props.openModal}
+                         currentUser={this.props.currentUser}/>
           <CompanyPostings companyName={this.props.company.name}
                            postings={this.props.company.postings}/>
           <CompanyOverview company={this.props.company}

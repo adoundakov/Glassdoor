@@ -3,7 +3,7 @@ import { hashHistory } from 'react-router';
 import {values} from 'lodash';
 import ReactStars from 'react-stars';
 
-const CompanyResultItem = ({company, requestOneCompany}) => {
+const CompanyResultItem = ({company, requestOneCompany, openModal, currentUser}) => {
 
   let handleClick = id => (
     e => {
@@ -17,6 +17,18 @@ const CompanyResultItem = ({company, requestOneCompany}) => {
       e.preventDefault();
       requestOneCompany(id);
       hashHistory.push(`reviews/${id}`);
+    }
+  );
+
+  let addReview = id => (
+    e => {
+      e.preventDefault();
+      if (currentUser !== null) {
+        requestOneCompany(id);
+        hashHistory.push(`reviews/${id}/new`);
+      } else {
+        openModal();
+      }
     }
   );
 
@@ -34,7 +46,7 @@ const CompanyResultItem = ({company, requestOneCompany}) => {
                 {company.name}
             </a>
             <div className='info-left'>{company.location} | {company.company_url}</div>
-            <div className='info-right'><a>Add a Review</a></div>
+            <div className='info-right'><a onClick={addReview(company.id)}>Add a Review</a></div>
             <div className='anchor-nav cf'>
               <div className='rating-summary'>
                 <ReactStars count={5}

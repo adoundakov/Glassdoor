@@ -1,9 +1,19 @@
 import React from 'react';
 import Scrollchor from 'react-scrollchor';
-
+import { hashHistory } from 'react-router';
 // let company cover use bg images
 // <img src={company.cover_url} alt={company.name}/>
-const CompanyHeader = ({company}) => {
+const CompanyHeader = ({company, openModal, currentUser}) => {
+
+  let addReview = e => {
+    e.preventDefault();
+    if (currentUser !== null) {
+      hashHistory.push(`reviews/${company.id}/new`);
+    } else {
+      openModal();
+    }
+  };
+
   return (
     <div className='company-header cf'>
       <div className='company-cover cf'>
@@ -37,7 +47,8 @@ const CompanyHeader = ({company}) => {
             </div>
           </Scrollchor>
         </div>
-        <div className='header-review'><a>Add a Review</a></div>
+        <div className='header-review'
+             onClick={addReview}><a>Add a Review</a></div>
       </div>
     </div>
   );
