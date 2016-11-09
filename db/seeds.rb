@@ -155,7 +155,7 @@ Posting.create!(company_id: 3, title: 'Production Engineer', position: 'Full-Tim
                 description: 'As a production engineer, you will be required to make the production process as efficient as possible. You will achieve this by using various principles of engineering, technology, manufacturing and management science. It is a vocation that has significant overlap with manufacturing and industrial engineering.
 
 If you have superb knowledge of the entire manufacturing process from start to finish and you enjoy the challenge of responding quickly to emergencies, a career as a production engineer could be just what you need.')
-Posting.create!(company_id: 3, title: 'Market Analyist', position: 'Full-Time',
+Posting.create!(company_id: 3, title: 'Market Analyst', position: 'Full-Time',
                 description: "Responsible for performing research and providing insights regarding the market, trends, competitors, potential and existing customers, and current campaigns.
 Primary responsibilities
 

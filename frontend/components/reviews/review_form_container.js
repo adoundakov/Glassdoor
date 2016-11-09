@@ -3,7 +3,8 @@ import ReviewForm from './review_form';
 import { createReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state) => ({
-   company: state.companyDetail
+   company: state.companyDetail,
+   errors: state.reviews.errors
  });
 
  const mapDispatchToProps = (dispatch) => ({

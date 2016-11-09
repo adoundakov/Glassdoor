@@ -13,9 +13,10 @@ class Api::ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     @review.company_id = params[:company_id]
+
     if @review.save
-      @company = @review.company
-      render "api/companies/show"
+      @reviews = @review.company.reviews
+      render "api/reviews/index"
     else
       render json: @review.errors.full_messages, status: 400
     end

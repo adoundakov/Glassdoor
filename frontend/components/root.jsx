@@ -13,6 +13,7 @@ import StandalonePostingDetail from './postings/standalone_posting_detail';
 import CompanyResultsContainer from './companies/company_results_container';
 import CompanyDetailContainer from './companies/company_detail_container';
 import ApplicationFormContainer from './application/application_form_container';
+import ReviewFormContainer from './reviews/review_form_container';
 
 import { requestAllPostings,
   requestOnePosting} from '../actions/posting_actions';
@@ -90,7 +91,8 @@ const Root = ({ store }) => {
           <Route path='reviews/:companyId'
                  component={ConstructionSplash}/>
           <Route path='reviews/:companyId/new'
-                 component={ConstructionSplash}/>
+                 component={ReviewFormContainer}
+                 onEnter={_reqOneCompany}/>
           <Route path='salaries' component={ConstructionSplash}/>
           <Route path='apply'
                  component={ApplicationFormContainer}

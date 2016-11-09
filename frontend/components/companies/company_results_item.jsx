@@ -49,13 +49,15 @@ const CompanyResultItem = ({company, requestOneCompany, openModal, currentUser})
             <div className='info-right'><a onClick={addReview(company.id)}>Add a Review</a></div>
             <div className='anchor-nav cf'>
               <div className='rating-summary'>
+                {company.average_rating}
                 <ReactStars count={5}
+                            char='&#10026;'
                             value={company.average_rating}
                             color1={'#404040'}
                             color2={'#86B73B'}
                             edit={false}
+                            className='react-stars'
                             />
-                          {company.average_rating}
               </div>
               <div className='company-nav-block cf'>
                 <div className='company-nav'

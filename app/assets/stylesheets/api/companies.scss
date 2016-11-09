@@ -39,7 +39,16 @@
   float: left;
   font-weight: 500;
   font-size: 20px;
-  padding: 14px;
+  padding: 14px 0;
+  width: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rating-summary > div {
+  transform: scale(1.5);
+  margin-left: 20px;
 }
 
 .company-name {

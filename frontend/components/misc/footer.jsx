@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 
 const Footer = () => (
   <footer>
-    <Link className='hr-link' to='/'>Work in HR or Recruiting?</Link>
     <p>easyHire is your free inside look at jobs and companies. Salary details, company reviews, and interview questions — all posted anonymously by employees and job seekers.</p>
     <ul className='footer-list'>
       <a className='git-link' href='http://www.github.com/adoundakov/easyHire'>
@@ -23,3 +22,5 @@ const Footer = () => (
 );
 
 export default Footer;
+
+// <Link className='hr-link' to='/'>Work in HR or Recruiting?</Link>
