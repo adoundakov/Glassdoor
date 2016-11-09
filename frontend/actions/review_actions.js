@@ -1,6 +1,7 @@
 export const CREATE_REVIEW = "CREATE_REVIEW";
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const REQUEST_REVIEWS = "REQUEST_REVIEWS";
 
 export const createReview = review => ({
   type: CREATE_REVIEW,
@@ -15,4 +16,9 @@ export const receiveReviews = reviews => ({
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
+});
+
+export const requestReviews = id => ({
+  type: REQUEST_REVIEWS,
+  id
 });

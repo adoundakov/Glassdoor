@@ -14,10 +14,12 @@ import CompanyResultsContainer from './companies/company_results_container';
 import CompanyDetailContainer from './companies/company_detail_container';
 import ApplicationFormContainer from './application/application_form_container';
 import ReviewFormContainer from './reviews/review_form_container';
+import ReviewIndexContainer from './reviews/review_index_container';
 
 import { requestAllPostings,
   requestOnePosting} from '../actions/posting_actions';
 import { requestOneCompany } from '../actions/company_actions';
+import { requestReviews } from '../actions/review_actions';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -38,6 +40,12 @@ const Root = ({ store }) => {
     if (nextState.params.userId != currId) {
       replace(`/user/${currId}`);
     }
+  };
+
+  const _reqCompanyReviews = (nextState) => {
+    let id = nextState.params.companyId;
+    store.dispatch(requestOneCompany(id));
+    store.dispatch(requestReviews(id));
   };
 
   const _reqTypePostings = (searchType) => {
@@ -89,7 +97,8 @@ const Root = ({ store }) => {
                  component={CompanyDetailContainer}
                  onEnter={_reqOneCompany}/>
           <Route path='reviews/:companyId'
-                 component={ConstructionSplash}/>
+                 component={ReviewIndexContainer}
+                 onEnter={_reqCompanyReviews}/>
           <Route path='reviews/:companyId/new'
                  component={ReviewFormContainer}
                  onEnter={_reqOneCompany}/>

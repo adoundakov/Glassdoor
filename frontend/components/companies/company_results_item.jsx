@@ -1,6 +1,5 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
-import {values} from 'lodash';
 import ReactStars from 'react-stars';
 
 const CompanyResultItem = ({company, requestOneCompany, openModal, currentUser}) => {
@@ -56,7 +55,6 @@ const CompanyResultItem = ({company, requestOneCompany, openModal, currentUser})
                             color1={'#404040'}
                             color2={'#86B73B'}
                             edit={false}
-                            className='react-stars'
                             />
               </div>
               <div className='company-nav-block cf'>

@@ -53,7 +53,7 @@ class ReviewForm extends React.Component {
           <p>It only takes a minute! And your anonymous review will help other job seekers.</p>
           <form className='review-form' onSubmit={this.handleSubmit}>
             <input className='rev-input' type='text' value={company.name} readOnly/>
-            <label>Overall Rating</label>
+            <label className='input-label'>Overall Rating</label>
             <div className='form-rating cf'>
               <ReactStars count={5}
                           char='&#10026;'

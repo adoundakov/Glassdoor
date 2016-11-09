@@ -7,3 +7,11 @@ export const createReview = (review, success, error) => {
      error
    });
 };
+
+export const fetchReviews = (id, success) => {
+  $.ajax({
+     type: 'GET',
+     url: `/api/companies/${id}/reviews`,
+     success
+   });
+};
