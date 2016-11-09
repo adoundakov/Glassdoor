@@ -53,10 +53,12 @@ class PostingDetail extends React.Component {
 
     if (posting.id === -1) {
       this.containerClass = 'posting-detail-container blur cf';
-      this.blurOverlay = <div className='blur-overlay'>
-                          <h3>Click a Job To View Here</h3>
-                          <div>Scroll through the jobs on the left and click to view the job description in this area</div>
-                        </div>;
+      this.blurOverlay = <div className='blur-container cf'>
+                            <div className='blur-overlay'>
+                              <h3>Click a Job To View Here</h3>
+                              <div>Scroll through the jobs on the left and click to view the job description in this area</div>
+                            </div>
+                          </div>;
     } else {
       this.containerClass = 'posting-detail-container cf';
     }

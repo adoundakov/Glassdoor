@@ -300,8 +300,8 @@
 
 .blur-overlay {
   position: absolute;
-  top: 45%;
-  left: 42.5%;
+  top: 20%;
+  left: 26%;
   text-align: center;
 }
 
@@ -349,4 +349,13 @@
   justify-content: space-between;
   color: #aaa;
   font-size: 12px;
+}
+
+.blur-container {
+  width: 67%;
+  margin-left: 33%;
+  height: 97.5%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 10;
 }

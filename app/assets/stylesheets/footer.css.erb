@@ -11,8 +11,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
-  flex-wrap: wrap;
+  width: 35%;
+  margin: 14px auto;
 }
 
 .hr-link {
@@ -20,6 +20,7 @@ footer {
   border-radius: 2px;
   font-weight: lighter;
   position: fixed;
+  z-index: 11;
   padding: 8px 20px;
   background-color: #86B73B;
   bottom: 12px;
@@ -31,8 +32,8 @@ footer {
   background-color: #75B94D;
   text-decoration: none;
   color: #fff;
+  cursor: not-allowed;
 }
-
 
 footer > p {
   display: inline-block;
@@ -43,38 +44,13 @@ footer > p {
   padding: 20px 0;
 }
 
-.footer-sub-list {
-  margin: 0 20px;
-  flex-direction: column;
+.footer-list img {
+  width: 50px;
+  height: 50px;
+  filter: grayscale(100%);
+  transition: filter 200ms linear;
 }
 
-.ios {
-  background: url('https://res.cloudinary.com/adoundakov/image/upload/v1478285108/images/App_Store_Badge_an3ixo.png');
-  background-size: cover;
-  display: block;
-  margin: 0;
-}
-
-.android {
-  background: url('https://res.cloudinary.com/adoundakov/image/upload/v1478285108/images/Android_Store_Badge_pe61id.png');
-  background-size: cover;
-  display: block;
-  margin: 5px 0 0 0;
-}
-
-.app-store {
-  width: 125px;
-  height: 41px;
-}
-
-.app-store:after {
-  content: '';
-  clear: both;
-  display: block;
-}
-
-.error-item {
-  color: red;
-  font-size: 14px;
-  text-align: center;
+.footer-list img:hover {
+  filter: grayscale(0);
 }
