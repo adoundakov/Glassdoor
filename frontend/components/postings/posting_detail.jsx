@@ -63,7 +63,7 @@ class PostingDetail extends React.Component {
       this.containerClass = 'posting-detail-container cf';
     }
 
-    if (!this.props.currentUser && posting.isApplied) {
+    if (this.props.currentUser !== null && posting.isApplied) {
       applyLink = <a className='apply disabled'>Applied</a>;
     } else {
       applyLink = <a className='apply' onClick={this.handleApply}>

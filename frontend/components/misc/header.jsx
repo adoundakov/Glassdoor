@@ -30,7 +30,7 @@ class Header extends React.Component {
           <ProfileDropDown logOut={this.logOut} currentUserId={this.props.currentUserId}/>
         </div>);
     } else {
-      profButton = (<a onClick={this.show.bind(this)}>Sign In</a>);
+      profButton = (<a className='sign-in' onClick={this.show.bind(this)}>Sign In</a>);
     }
 
     return (
