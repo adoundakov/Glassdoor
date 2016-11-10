@@ -10,6 +10,10 @@ class ReviewIndex extends React.Component {
     this.openModal = props.openModal.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+  }
+
   addReview (id) {
     return e => {
       e.preventDefault();

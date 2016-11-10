@@ -1,5 +1,5 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 
 const PostingResultItem = ({posting, postAction}) => {
 
@@ -15,7 +15,11 @@ const PostingResultItem = ({posting, postAction}) => {
       </div>
       <div className='posting-info'>
         <span className='posting-result-title'>{posting.title}</span>
-        <span>{posting.company.name}</span>
+        <span>
+          <Link to={`/company/${posting.company.id}`}>
+            {posting.company.name}
+          </Link>
+        </span>
         <div className='posting-info-span'>
           <span>{posting.company.location}</span>
           <span>{posting.age} ago</span>

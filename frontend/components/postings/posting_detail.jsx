@@ -1,5 +1,5 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 import CompanyOverview from '../companies/detail/company_overview';
 import Scrollchor from 'react-scrollchor';
 
@@ -91,7 +91,7 @@ class PostingDetail extends React.Component {
               <div className='info'>
                 <h3>{posting.title}</h3>
                 <div className='job-info'>
-                  <div className='info-left'>{company.name} | {company.location}</div>
+                  <div className='info-left'><Link to={`/company/${company.id}`}>{company.name}</Link> | {company.location}</div>
                   <div className='info-right'>{posting.age} ago</div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ class PostingDetail extends React.Component {
           </div>
           <div className='detail-content'>
             <div id='description' className='description'>
-              Job Requirements:
+              <strong>Job Requirements:</strong>
               <ul>{this.nl2br(posting.description)}</ul>
             </div>
             <CompanyOverview company={company} width={'100%'}/>

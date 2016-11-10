@@ -2,7 +2,7 @@
   json.set! posting.id do
     json.extract! posting, :id, :title, :age
     json.company do
-      json.extract! posting.company, :name, :location, :logo_url
+      json.extract! posting.company, :name, :location, :logo_url, :id
     end
   end
 end
