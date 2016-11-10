@@ -1,7 +1,7 @@
 class Api::CompaniesController < ApplicationController
   def index
     if params[:search_type] == 'SEARCH'
-      # Will implement later, PHASE 4
+      @companies = Company.search_by_name(params[:query])
     else
       @companies = Company.all
     end

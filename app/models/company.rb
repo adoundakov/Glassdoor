@@ -35,4 +35,9 @@ class Company < ApplicationRecord
       return number_with_precision(average, precision: 2).to_s
     end
   end
+
+  def self.search_by_name(input)
+    query = '%' + input + '%'
+    Company.where("name LIKE ?", query)
+  end
 end

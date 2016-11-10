@@ -1,8 +1,8 @@
-export const fetchAllPostings = (searchType, success) => {
+export const fetchAllPostings = (searchType, success, query) => {
   $.ajax({
      type: 'GET',
      url: '/api/postings',
-     data: {search_type: searchType},
+     data: {search_type: searchType, query},
      success
    });
 };

@@ -10,7 +10,7 @@ const ReviewIndexItem = ({review}) => {
     currentEmployee = 'Former Employee';
   }
   return (
-    <li className='review-index-item cf'>
+    <li className='review-index-item'>
       <div className='review-item-header'>
         <div className='top-info'>
           <p className='review-age'>Nov 11th, 2015</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './nav';
-import {hashHistory} from 'react-router';
+import {hashHistory, withRouter} from 'react-router';
 import Modal, {closeStyle} from 'simple-react-modal';
 import SessionForm from '../session/session_form';
 import ProfileDropDown from './profile_drop_down';
@@ -58,4 +58,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

@@ -6,7 +6,7 @@ class Api::PostingsController < ApplicationController
     when "APPLIED"
       @postings = current_user.applied_postings
     when "SEARCH"
-      # Will implement later, PHASE 4
+      @postings = Posting.search_by_title(params[:query])
     else
       @postings = Posting.all
     end

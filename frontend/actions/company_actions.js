@@ -3,9 +3,10 @@ export const REQUEST_ONE_COMPANY = "REQUEST_ONE_COMPANY";
 export const RECEIVE_ALL_COMPANIES = "RECEIVE_ALL_COMPANIES";
 export const RECEIVE_ONE_COMPANY = "RECEIVE_ONE_COMPANY";
 
-export const requestAllCompanies = (searchType) => ({
+export const requestAllCompanies = (searchType, query) => ({
   type: REQUEST_ALL_COMPANIES,
-  searchType
+  searchType,
+  query
 });
 
 export const requestOneCompany = (id) => ({

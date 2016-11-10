@@ -11,6 +11,7 @@ class PostingDetail extends React.Component {
     this.handleSave = this.handleSave.bind(this);
     this.handleApply = this.handleApply.bind(this);
     this.openModal = props.openModal.bind(this);
+    this.nl2br = this.nl2br.bind(this);
   }
 
   handleSave(e) {
@@ -33,6 +34,13 @@ class PostingDetail extends React.Component {
     } else {
       this.openModal();
     }
+  }
+
+  nl2br(input) {
+    console.log(input.split(/\\n/));
+    return input.split(/\\n/).map((line, idx) => (
+      <li key={idx}>{line}</li>
+    ));
   }
 
   render() {
@@ -103,7 +111,8 @@ class PostingDetail extends React.Component {
           </div>
           <div className='detail-content'>
             <div id='description' className='description'>
-              {posting.description}
+              Job Requirements:
+              <ul>{this.nl2br(posting.description)}</ul>
             </div>
             <CompanyOverview company={company} width={'100%'}/>
           </div>

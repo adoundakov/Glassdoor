@@ -12,7 +12,7 @@ const CompanyMiddleware = ({getState, dispatch}) => next => action => {
 
   switch (action.type) {
     case Actions.REQUEST_ALL_COMPANIES:
-      Util.fetchAllCompanies(action.searchType, fetchAllSuccess);
+      Util.fetchAllCompanies(action.searchType, fetchAllSuccess, action.query);
       return next(action);
     case Actions.REQUEST_ONE_COMPANY:
       Util.fetchOneCompany(action.id, fetchOneSuccess);

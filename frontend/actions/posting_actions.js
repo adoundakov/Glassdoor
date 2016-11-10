@@ -5,9 +5,10 @@ export const RECEIVE_ONE_POSTING = "RECEIVE_POSTING";
 export const SAVE_POSTING = "SAVE_POSTING";
 export const UN_SAVE_POSTING = "UN_SAVE_POSTING";
 
-export const requestAllPostings = (searchType) => ({
+export const requestAllPostings = (searchType, query) => ({
   type: REQUEST_ALL_POSTINGS,
-  searchType
+  searchType,
+  query
 });
 
 export const requestOnePosting = (id) => ({

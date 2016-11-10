@@ -1,8 +1,8 @@
-export const fetchAllCompanies = (searchType, success) => {
+export const fetchAllCompanies = (searchType, success, query) => {
   $.ajax({
      type: 'GET',
      url: '/api/companies',
-     data: {search_type: searchType},
+     data: {search_type: searchType, query},
      success
    });
 };

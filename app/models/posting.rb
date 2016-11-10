@@ -31,4 +31,9 @@ class Posting < ApplicationRecord
   def age
     time_ago_in_words(self.created_at)
   end
+
+  def self.search_by_title(input)
+    query = '%' + input + '%'
+    Posting.where("title LIKE ?", query)
+  end
 end
