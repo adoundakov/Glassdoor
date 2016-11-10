@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactPaginate from 'react-paginate';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -10,16 +11,17 @@ class SearchBar extends React.Component {
   }
 
   update(e) {
-    this.setState({query: e.target.value});
+    this.setState({query: e.target.value}, () => {this.submitQuery();});
   }
 
   submitQuery() {
+    let input = this.state.query.split(' ');
     switch (this.props.searchType) {
       case 'companies':
-        this.props.requestAllCompanies('SEARCH', this.state.query);
+        this.props.requestAllCompanies('SEARCH', input);
         break;
       case 'jobs':
-        this.props.requestAllPostings('SEARCH', this.state.query);
+        this.props.requestAllPostings('SEARCH', input);
         break;
     }
   }
@@ -34,9 +36,8 @@ class SearchBar extends React.Component {
     return (
       <div className='search-bar'>
         <input type='text'
-               placeholder='Search'
-               onChange={this.update}
-               onKeyUp={this.submitQuery}/>
+               placeholder={'Search '+ this.props.searchType + ' ...'}
+               onChange={this.update}/>
       </div>
     );
   }

@@ -37,7 +37,7 @@ class Company < ApplicationRecord
   end
 
   def self.search_by_name(input)
-    query = '%' + input + '%'
+    query = '%' + input.join('%') + '%'
     Company.where("UPPER(name) LIKE UPPER(?)", query)
   end
 end

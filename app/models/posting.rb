@@ -33,7 +33,7 @@ class Posting < ApplicationRecord
   end
 
   def self.search_by_title(input)
-    query = '%' + input + '%'
+    query = '%' + input.join('%') + '%'
     Posting.where("UPPER(title) LIKE UPPER(?)", query)
   end
 end
