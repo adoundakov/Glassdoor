@@ -151,3 +151,90 @@ a:hover {
 .inline {
   display: inline-block;
 }
+
+.page-list {
+  padding: 14px;
+  display: flex;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-item {
+  border: 1px solid #ccc;
+  height: 35px;
+  width: 35px;
+  font-weight: 300;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 100ms linear;
+  border-radius: 2px;
+}
+
+.page-item a {
+  color: #2C84CC;
+  line-height: 34px;
+}
+
+.page-item:hover {
+  background: #F1F1F1;
+  cursor: pointer;
+}
+
+.page-item a:hover {
+  text-decoration: none;
+  color: #016DA3;
+}
+
+.active-page {
+  background: #2c84cc !important;
+}
+
+.active-page a {
+  color: #fff !important;
+  font-weight: 400;
+}
+
+.previous-page {
+  transition: background-color 100ms linear;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  height: 35px;
+  width: 35px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.previous-page img, .next-page img{
+  height: 15px;
+  padding-top: 5px;
+  width: 15px;
+}
+
+.next-page {
+  transition: background-color 100ms linear;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  border-radius: 2px;
+}
+
+.previous-page:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.next-page:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}

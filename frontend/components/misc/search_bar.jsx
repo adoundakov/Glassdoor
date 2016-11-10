@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import ReactPaginate from 'react-paginate';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -7,7 +6,6 @@ class SearchBar extends React.Component {
     this.update = this.update.bind(this);
     this.state = {query: ''};
     this.submitQuery = this.submitQuery.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   update(e) {
@@ -23,12 +21,6 @@ class SearchBar extends React.Component {
       case 'jobs':
         this.props.requestAllPostings('SEARCH', input);
         break;
-    }
-  }
-
-  handleKeyPress(tgt) {
-    if (tgt.charCode === 13) {
-      this.submitQuery();
     }
   }
 
