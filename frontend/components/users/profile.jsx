@@ -22,6 +22,7 @@ class UserProfile extends React.Component {
           <ul className='user-sidebar'>
             <li onClick={this.handleClick('saved')}>Saved Jobs</li>
             <li onClick={this.handleClick('applied')}>Applied Jobs</li>
+            <li onClick={this.handleClick('authored')}>Authored Reviews</li>
           </ul>
           {this.props.children}
         </div>

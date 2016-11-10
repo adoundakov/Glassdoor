@@ -18,7 +18,8 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const requestReviews = id => ({
+export const requestReviews = (id, searchType) => ({
   type: REQUEST_REVIEWS,
-  id
+  id,
+  searchType
 });

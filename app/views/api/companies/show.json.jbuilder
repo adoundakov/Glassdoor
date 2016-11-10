@@ -10,5 +10,8 @@ json.postings do
   end
 end
 json.numPostings @company.postings.length
-json.topReview @company.reviews.last
+json.topReview do
+  json.extract! @company.reviews.last, :id, :advice, :age, :company_id, :cons, :current_employee, :job_title, :pros, :rating, :title
+  json.company_logo_url @company.logo_url
+end
 json.numReviews @company.reviews.length

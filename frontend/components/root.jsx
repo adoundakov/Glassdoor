@@ -15,6 +15,7 @@ import CompanyDetailContainer from './companies/company_detail_container';
 import ApplicationFormContainer from './application/application_form_container';
 import ReviewFormContainer from './reviews/review_form_container';
 import ReviewIndexContainer from './reviews/review_index_container';
+import AuthoredReviewsContainer from './users/authored_reviews_container';
 
 import { requestAllPostings,
   requestOnePosting} from '../actions/posting_actions';
@@ -73,6 +74,13 @@ const Root = ({ store }) => {
     }
   };
 
+  const _reqTypeReviews = (searchType) => {
+    return (nextState, replace) => {
+      _redirectIfWrongUser(nextState, replace);
+      store.dispatch(requestReviews(-1, searchType));
+    };
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -81,12 +89,15 @@ const Root = ({ store }) => {
           <Route path='user/:userId'
                  component={UserProfileContainer}
                  onEnter={_redirectIfWrongUser}>
-                 <Route path='saved'
-                        component={SavedJobsContainer}
-                        onEnter={_reqTypePostings('SAVED')}/>
-                 <Route path='applied'
-                  component={AppliedJobsContainer}
-                  onEnter={_reqTypePostings('APPLIED')}/>
+                <Route path='saved'
+                       component={SavedJobsContainer}
+                       onEnter={_reqTypePostings('SAVED')}/>
+                <Route path='applied'
+                       component={AppliedJobsContainer}
+                       onEnter={_reqTypePostings('APPLIED')}/>
+                <Route path='authored'
+                       component={AuthoredReviewsContainer}
+                       onEnter={_reqTypeReviews('AUTHORED')}/>
           </Route>
           <Route path='jobs' component={PostingResultsContainer}/>
           <Route path='detail/:postingId'

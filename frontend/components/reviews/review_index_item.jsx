@@ -2,7 +2,7 @@ import React from 'react';
 import { hashHistory } from 'react-router';
 import ReactStars from 'react-stars';
 
-const ReviewIndexItem = ({review, companyLogo}) => {
+const ReviewIndexItem = ({review}) => {
   let currentEmployee;
   if (review.current_employee) {
     currentEmployee = 'Current Employee';
@@ -15,7 +15,7 @@ const ReviewIndexItem = ({review, companyLogo}) => {
         <div className='top-info'>
           <p className='review-age'>Nov 11th, 2015</p>
           <div className='mini-logo'>
-            <img src={companyLogo} alt='Review Logo'/>
+            <img src={review.company_logo_url} alt='Review Logo'/>
           </div>
         </div>
         <div className='review-title'>{review.title}</div>

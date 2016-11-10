@@ -336,7 +336,7 @@ PostingApplication.create!(user_id: 2, posting_id: 5, resume: 'HIRE ME PLEASE')
     pros = Faker::Lorem.paragraph
     cons = Faker::Lorem.paragraph
     advice = Faker::Hacker.say_something_smart
-    Review.create!(user_id: userId, company_id: companyId, rating: rating,
+    Review.create!(user_id: userId, company_id: companyId + 1, rating: rating,
                    current_employee: current_employee, job_title: job_title,
                    pros: pros, cons: cons, advice: advice, title: title)
   end

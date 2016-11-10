@@ -37,8 +37,7 @@ class CompanyDetail extends React.Component {
             </div>
             <h4>Featured Review</h4>
             <ul style={{borderTop: '1px solid #ccc'}}>
-              <ReviewIndexItem companyLogo={company.logo_url}
-                               review={company.topReview}/>
+              <ReviewIndexItem review={company.topReview}/>
             </ul>
             <Link to={`/reviews/${company.id}`}>
               See all {company.numReviews} Reviews

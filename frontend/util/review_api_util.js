@@ -8,10 +8,11 @@ export const createReview = (review, success, error) => {
    });
 };
 
-export const fetchReviews = (id, success) => {
+export const fetchReviews = (id, searchType, success) => {
   $.ajax({
      type: 'GET',
      url: `/api/companies/${id}/reviews`,
+     data: {search_type: searchType},
      success
    });
 };

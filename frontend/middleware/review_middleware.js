@@ -19,7 +19,7 @@ const ReviewMiddleware = ({getState, dispatch}) => next => action => {
       createReview(action.review, createSuccess, createFailure);
       return next(action);
     case Actions.REQUEST_REVIEWS:
-      fetchReviews(action.id, fetchSuccess);
+      fetchReviews(action.id, action.searchType, fetchSuccess);
       return next(action);
     default:
       return next(action);

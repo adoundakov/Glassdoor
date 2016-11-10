@@ -24,10 +24,7 @@ class ReviewIndex extends React.Component {
   render () {
     let company = this.props.company;
     let reviews = this.props.reviews.map((review, idx) => (
-      <ReviewIndexItem companyLogo={company.logo_url}
-                       review={review}
-                       key={idx}/>
-                    ));
+      <ReviewIndexItem review={review} key={idx}/>));
 
     return (
       <div className='page-content cf'>
