@@ -21,27 +21,49 @@ class Header extends React.Component {
     this.closeModal();
   }
 
+  getHeaderClass () {
+    let type = this.props.router.location.pathname.slice(1);
+    switch (type) {
+      case "companies":
+        this.showSearch = true;
+        this.searchType = type;
+        return 'header tall';
+      case 'jobs':
+        this.showSearch = true;
+        this.searchType = type;
+        return 'header tall';
+      default:
+        this.showSearch = false;
+        return 'header';
+    }
+  }
+
   render() {
     let profButton;
     if (this.props.loggedIn) {
       profButton = (
         <div className='profile-drop-down-trigger'>
-          <img src='http://flaticons.net/icons/Application/User-Profile.png' alt='profile'/>
-          <ProfileDropDown logOut={this.logOut} currentUserId={this.props.currentUserId}/>
+          <img src='http://flaticons.net/icons/Application/User-Profile.png'
+               alt='profile'/>
+          <ProfileDropDown logOut={this.logOut}
+                           currentUserId={this.props.currentUserId}
+                           showSearch={this.showSearch}/>
         </div>);
     } else {
       profButton = (<a className='sign-in' onClick={this.show.bind(this)}>Sign In</a>);
     }
 
+    let headerClass = this.getHeaderClass();
+    let headIconClass = this.showSearch ? 'header-icon big' : 'header-icon';
     return (
       <div className='header-background'>
-        <section className='header'>
+        <section className={headerClass}>
           <div className='header-group'
                onClick={() => hashHistory.push('/')}>
-            <div className='header-icon'>{''}</div>
+            <div className={headIconClass}>{''}</div>
             <h3>easyHire</h3>
           </div>
-          <Nav />
+          <Nav showSearch={this.showSearch} searchType={this.searchType} />
           {profButton}
           <Modal
             style={{transition: 'opacity 100ms linear'}}

@@ -37,7 +37,6 @@ class PostingDetail extends React.Component {
   }
 
   nl2br(input) {
-    console.log(input.split(/\\n/));
     return input.split(/\\n/).map((line, idx) => (
       <li key={idx}>{line}</li>
     ));

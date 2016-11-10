@@ -48,8 +48,16 @@
   background-size: cover;
 }
 
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+}
+
 .nav-bar {
   text-align: center;
+  display: flex;
   width: 66%;
   font-size: 14px;
 }
@@ -113,4 +121,43 @@
   color: red;
   font-size: 14px;
   text-align: center;
+}
+
+.search-bar input {
+  width: 100%;
+  height: 30px;
+  padding: 3px 7px;
+  line-height: 16.8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  color: #404040;
+  box-shadow: inset 0 1px 0 0 #d0d0d0;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  outline: none;
+  -webkit-transition: box-shadow 0.25s, border-color 0.25s;
+  transition: box-shadow 0.25s, border-color 0.25s;
+  display: inline-block;
+  background-image: url('https://res.cloudinary.com/adoundakov/image/upload/c_scale,w_15/v1478800328/images/searchIcon_ds1vwd.png');
+  background-position: 97% 50%;
+  background-repeat: no-repeat;
+}
+
+.search-bar input:focus {
+  border-color: #2c82c7;
+  box-shadow: inset 0 1px 0 0 #d0d0d0,0 0 1px 1px rgba(44,130,199,0.6);
+}
+
+.tall {
+  height: 78px;
+}
+
+.big {
+  transform: scale(1.5);
+  margin-right: 14px;
+}
+
+.lower {
+  top: 78px;
 }
