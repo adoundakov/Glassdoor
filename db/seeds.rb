@@ -205,7 +205,8 @@ PostingApplication.create!(user_id: 2, posting_id: 4, resume: 'HIRE ME PLEASE')
 PostingApplication.create!(user_id: 2, posting_id: 5, resume: 'HIRE ME PLEASE')
 
 17.times do |companyId|
-  (rand(15)+1).times do |userId|
+  numUsers = rand(14) + 1
+  numUsers.times do |userId|
     rating = rand(5) + 1
     current_employee = [true, false].sample
     job_title = Faker::Name.title
