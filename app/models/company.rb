@@ -16,6 +16,7 @@
 #
 
 class Company < ApplicationRecord
+  include ActionView::Helpers::NumberHelper
   SIZES = %w(1-10 11-50 51-200 201-500 501-1,000 1,001-5,000 5,001-10,000 10,001+)
   validates :name, uniqueness: true, presence: true
   validates :ceo, :logo_url, :cover_url, :location, presence: true
@@ -27,6 +28,11 @@ class Company < ApplicationRecord
   def average_rating
     ratings = []
     self.reviews.map { |review| ratings << review.rating }
-    ratings.empty? ? '--' : (ratings.inject(:+) / ratings.size.to_f).to_s
+    if ratings.empty?
+      return '--'
+    else
+      average = (ratings.inject(:+).to_f / ratings.size.to_f)
+      return number_with_precision(average, precision: 2).to_s
+    end
   end
 end

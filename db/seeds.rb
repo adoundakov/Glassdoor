@@ -9,9 +9,13 @@
 User.create!(username: 'guestSeeker', email: 'someone@example.com', password: '123456')
 User.create!(username: 'alexSeeker', email: 'alex@aol.com', password: '123456')
 User.create!(username: 'alexPoster', email: 'alex@employer.io', password: '123456', is_employer: true, company_id: 1)
+15.times do |num|
+  username = 'dummy' + "#{num}"
+  User.create!(username: username, email: username, password: '123456')
+end
 
 Company.create!(name: 'Google',
-                size: '10,001+' ,
+                size: '10,001+',
                 ceo: 'Sundar Pichai',
                 logo_url: 'http://lafi.me/wp-content/uploads/2016/04/google-logo.jpg',
                 cover_url: 'http://www.underconsideration.com/brandnew/archives/google_2015_logo_detail.png',
@@ -322,3 +326,18 @@ PostingApplication.create!(user_id: 2, posting_id: 2, resume: 'HIRE ME PLEASE')
 PostingApplication.create!(user_id: 2, posting_id: 3, resume: 'HIRE ME PLEASE')
 PostingApplication.create!(user_id: 2, posting_id: 4, resume: 'HIRE ME PLEASE')
 PostingApplication.create!(user_id: 2, posting_id: 5, resume: 'HIRE ME PLEASE')
+
+7.times do |companyId|
+  15.times do |userId|
+    rating = rand(5) + 1
+    current_employee = [true, false].sample
+    job_title = Faker::Name.title
+    title = Faker::Book.title
+    pros = Faker::Lorem.paragraph
+    cons = Faker::Lorem.paragraph
+    advice = Faker::Hacker.say_something_smart
+    Review.create!(user_id: userId, company_id: companyId, rating: rating,
+                   current_employee: current_employee, job_title: job_title,
+                   pros: pros, cons: cons, advice: advice, title: title)
+  end
+end

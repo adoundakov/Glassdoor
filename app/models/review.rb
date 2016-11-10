@@ -19,9 +19,10 @@
 class Review < ApplicationRecord
   include ActionView::Helpers::DateHelper
 
-  validates :user_id, :company_id, :rating, :current_employee, :job_title,
+  validates :user_id, :company_id, :rating, :job_title,
             :title, :pros, :cons, :advice, presence: true
 
+  validates :current_employee, inclusion: { in: [true, false] }
   validates_uniqueness_of :user_id, scope: [:company_id],
                                     message: "Already reviewed this company"
 

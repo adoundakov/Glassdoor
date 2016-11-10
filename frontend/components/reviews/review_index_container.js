@@ -4,7 +4,8 @@ import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
    reviews: state.reviews.reviews,
-   company: state.companyDetail
+   company: state.companyDetail,
+   currentUser: state.session.currentUser
  });
 
 const mapDispatchToProps = (dispatch) => ({

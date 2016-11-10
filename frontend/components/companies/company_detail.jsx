@@ -10,7 +10,6 @@ import ConstructionSplash from '../misc/construction';
 class CompanyDetail extends React.Component {
   render () {
     let company = this.props.company;
-    console.log(company);
     return (
       <div className='page-content cf'>
         <div className='company-detail-container'>

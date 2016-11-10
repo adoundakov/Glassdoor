@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary'
 gem 'figaro'
 gem 'actionview'
+gem 'faker'
+gem 'factory_girl'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
