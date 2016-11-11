@@ -53,30 +53,32 @@ class ReviewIndex extends React.Component {
 
     return (
       <div className='page-content cf'>
-        <div className='form-container cf'>
-          <h2 className='inline'>Reviews for {company.name}</h2>
-          <div className='button-right'><a onClick={this.addReview(company.id)}>Add a Review</a></div>
-          <ul className='review-results-list'>
-            {reviews}
-          </ul>
-          <ReactPaginate previousLabel={<img src='https://res.cloudinary.com/adoundakov/image/upload/v1478817806/images/back_kxapqj.png' alt='prev'/>}
-                         nextLabel={<img src='https://res.cloudinary.com/adoundakov/image/upload/v1478817806/images/next_m1gyl6.png' alt='next'/>}
-                         breakLabel='...'
-                         pageNum={numPages}
-                         marginPagesDisplayed={1}
-                         pageRangeDisplayed={3}
-                         clickCallback={this.handlePageClick}
-                         containerClassName='page-list'
-                         pageClassName='page-item'
-                         activeClassName='active-page'
-                         previousClassName='previous-page'
-                         nextClassName='next-page'
-                         disabledClassName='disabled-page'
-                         breakClassName='page-item'
-                         />
+        <div className='review-index-container cf'>
+          <div className='form-container cf'>
+            <h2 className='inline'>Reviews for {company.name}</h2>
+            <div className='button-right'><a onClick={this.addReview(company.id)}>Add a Review</a></div>
+            <ul className='review-results-list'>
+              {reviews}
+            </ul>
+            <ReactPaginate previousLabel={<img src='https://res.cloudinary.com/adoundakov/image/upload/v1478817806/images/back_kxapqj.png' alt='prev'/>}
+                           nextLabel={<img src='https://res.cloudinary.com/adoundakov/image/upload/v1478817806/images/next_m1gyl6.png' alt='next'/>}
+                           breakLabel='...'
+                           pageNum={numPages}
+                           marginPagesDisplayed={1}
+                           pageRangeDisplayed={3}
+                           clickCallback={this.handlePageClick}
+                           containerClassName='page-list'
+                           pageClassName='page-item'
+                           activeClassName='active-page'
+                           previousClassName='previous-page'
+                           nextClassName='next-page'
+                           disabledClassName='disabled-page'
+                           breakClassName='page-item'
+                           />
+          </div>
+          <CompanyPostings companyName={company.name}
+                           postings={company.postings}/>
         </div>
-        <CompanyPostings companyName={company.name}
-                         postings={company.postings}/>
       </div>
     );
   }

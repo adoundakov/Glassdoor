@@ -88,6 +88,7 @@
   width: calc(67% - 14px);
   background: #fff;
   box-shadow: 0 1px 1px 1px rgba(127,127,127,0.3);
+  border-radius: 2px;
   float: left;
   padding: 14px;
 }
@@ -96,6 +97,7 @@
   position: relative;
   float: right;
   width: 33%;
+  max-width: 437px;
   margin-bottom: 14px;
   padding: 14px;
   border-radius: 2px;
@@ -246,4 +248,9 @@
 .review-rating-summary > div {
   transform: scale(1.5);
   margin-left: 20px;
+}
+
+.review-index-container {
+  margin: 0 auto;
+  max-width: 1000px;
 }
