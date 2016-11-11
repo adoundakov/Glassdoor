@@ -1,6 +1,6 @@
 # easyHire Development ReadMe
 
-[Heroku Link](easyhire.herokuapp.com)
+[Heroku Link](http://www.easy-hire.me)
 [Trello Link](https://trello.com/b/5u81Jng8)
 
 ## Minimum Viable Product
