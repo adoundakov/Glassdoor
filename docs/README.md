@@ -1,5 +1,4 @@
 # easyHire Development ReadMe
-*alternative title: Glassifieds*
 
 [Heroku Link](easyhire.herokuapp.com)
 [Trello Link](https://trello.com/b/5u81Jng8)
@@ -12,11 +11,11 @@ support the following (all with bug-free navigation, great styling, and adequate
 
 - [x] Hosting on Heroku
 - [x] New account creation, login, guest demo login for job seekers
-- [ ] New account functionality for employers to post jobs
-- [ ] Seekers can view, save, and apply to postings made by Employers
-- [ ] Seekers can search for jobs and companies
-- [ ] Companies will have a profile page that lists information, openings, and reviews for the company
-- [ ] Employers can create new postings
+- [x] Seekers can view, save, and apply to postings made by Employers
+- [x] Seekers can search for jobs and companies
+- [x] Companies will have a profile page that lists information, openings, and reviews for the company
+- [x] Seekers can create reviews for companies.
+- [x] Users not wishing to sign up can use the site as a guest
 - [ ] Production README
 
 ## Design Docs
@@ -41,10 +40,9 @@ support the following (all with bug-free navigation, great styling, and adequate
 **Goal:** Ability to search by job, company, or position to see openings
 ### Bonus Features:
 **Goal:** Implement as many of following as possible with remaining time.
-- [ ] Salaries: Add salary data for positions / industries.
-- [ ] Social: Seekers can send messages to each other
+- [ ] Seekers: Filter Jobs / Companies by properties
+- [ ] Salaries: Add salary data for positions / industries
 - [ ] Seekers: See advanced data about salaries / openings
 - [ ] Seekers: File Upload / Resume Version management (pick which resume to apply with)
 - [ ] Employers: Postings CRUD, with account creation (maybe company verification?)
 - [ ] Employers: See aggregate data for all applicants, along with advanced posting performance.
-- [ ] Add Email alert functionality
