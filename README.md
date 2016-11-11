@@ -4,6 +4,8 @@
 
 easyHire is a full-stack web application inspired by [Glassdoor](www.glassdoor.com). It is implemented with a Ruby on Rails backend, a PostreSQL database, and a Redux-style frontend done with React.js.
 
+![landing page](docs/screenshots/landingpage.png)
+
 ## Features
 
 ### Job Postings
@@ -12,13 +14,13 @@ At it's core, easyHire is about job-hunting, allowing seekers to search for post
 
 Seekers can find job postings in several different locations with two main flavors, a condensed posting and a detailed posting. There is a dedicated `Jobs` tab where users can search for jobs by name, and browse a list of matching jobs. Clicking upon one of the condensed items brings the details of that posting into the main window.
 
-![image of posting browser](docs/wireframes/Job Search Results.png)
+![image of posting browser](docs/screenshots/jobsindex.png)
 
 ### Companies
 
 Another key feature of easyHire is the ability to search for companies by name and see details about a particular company. Companies are stored somewhat similarly to Postings in the database, and rendered using a similar React component structure. Upon visiting the `Companies` section of the website, users are greeted with a `CompaniesIndex` of all the entities on easyHire, with the ability to filter by name. The list of companies is stored in the `CompanyStore`, with a specific company's details stored under the `CompanyDetail` section of that store. Clicking on a `CompanyIndexItem` takes the user to that company's detail page, which lists things like a description, stats container, and a sidebar of related jobs.
 
-![image of company profile](docs/wireframes/Company Profile Page.png)
+![image of company profile](docs/screenshots/companyprofile.png)
 
 ### Reviews
 
@@ -26,7 +28,7 @@ Finally, easyHire allows users to review the companies they have worked for. In 
 
 Reviews are stored in a separate table and belong to a company and a user through respective `company_id` and `user_id` properties. easyHire's reviews are anonymous however, and `user_id`s are only used server-side to make sure a particular user doesn't review a company more than once. (There are plans to expand this feature so users can rate multiple times)
 
-![image of review form](docs/wireframes/Company Review Page.png)
+![image of review form](docs/screenshots/reviewindex.png)
 
 ## Future Directions for easyHire
 

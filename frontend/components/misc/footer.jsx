@@ -20,6 +20,7 @@ const Footer = () => (
     </ul>
     <p>Website made by Alexander Doundakov, student at <a href='http://www.appacademy.io'>App Academy</a></p>
     <p>Icons made by <a href="http://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> and licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a></p>
+    <p>Data on this site was randomly generated using <a href='https://github.com/stympy/faker'>Faker</a></p>
   </footer>
 );
 
