@@ -1,9 +1,9 @@
 class Api::CompaniesController < ApplicationController
   def index
     if params[:search_type] == 'SEARCH'
-      @companies = Company.search_by_name(params[:query])
+      @companies = Company.search_by_name(params[:query]).includes(:postings, :reviews)
     else
-      @companies = Company.all
+      @companies = Company.all.includes(:postings, :reviews)
     end
   end
 

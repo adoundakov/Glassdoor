@@ -3,9 +3,9 @@ class Api::ReviewsController < ApplicationController
 
   def index
     if params[:search_type] == 'AUTHORED'
-      @reviews = current_user.reviews
+      @reviews = current_user.reviews.includes(:company)
     else
-      @reviews = Review.where(company_id: params[:company_id])
+      @reviews = Review.where(company_id: params[:company_id]).includes(:company)
     end
   end
 

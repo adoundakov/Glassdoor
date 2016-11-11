@@ -9,7 +9,7 @@
 User.create!(username: 'guestSeeker', email: 'someone@example.com', password: '123456')
 User.create!(username: 'alexSeeker', email: 'alex@aol.com', password: '123456')
 User.create!(username: 'alexPoster', email: 'alex@employer.io', password: '123456', is_employer: true, company_id: 1)
-75.times do |num|
+175.times do |num|
   username = 'dummy' + "#{num}"
   User.create!(username: username, email: username, password: '123456')
 end
@@ -205,7 +205,7 @@ PostingApplication.create!(user_id: 2, posting_id: 4, resume: 'HIRE ME PLEASE')
 PostingApplication.create!(user_id: 2, posting_id: 5, resume: 'HIRE ME PLEASE')
 
 17.times do |companyId|
-  numUsers = rand(75)
+  numUsers = rand(75) + rand(100)
   numUsers.times do |userId|
     rating = rand(5) + 1
     current_employee = [true, false].sample

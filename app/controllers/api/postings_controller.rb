@@ -2,13 +2,13 @@ class Api::PostingsController < ApplicationController
   def index
     case params[:search_type]
     when "SAVED"
-      @postings = current_user.saved_postings
+      @postings = current_user.saved_postings.includes(:company)
     when "APPLIED"
-      @postings = current_user.applied_postings
+      @postings = current_user.applied_postings.includes(:company)
     when "SEARCH"
-      @postings = Posting.search_by_title(params[:query])
+      @postings = Posting.search_by_title(params[:query]).includes(:company)
     else
-      @postings = Posting.all
+      @postings = Posting.all.includes(:company)
     end
   end
 
