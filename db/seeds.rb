@@ -386,6 +386,6 @@ end
     companyId = rand(31) + 1
     salary = rand(50000) + rand(50000) + rand(15000) + rand(15000)
     puts "Creating Salary with user:#{userId}, company:#{companyId}, salary:#{salary}, title:#{job_title}"
-    Salary.create!(user_id: userId, company_id: companyId, salary: salary, title: job_title)
+    Salary.create!(user_id: userId + 1, company_id: companyId, salary: salary, title: job_title)
   end
 end
