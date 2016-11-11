@@ -40,9 +40,12 @@ class Header extends React.Component {
 
   render() {
     let profButton;
+    let headerClass = this.getHeaderClass();
+    let headIconClass = this.showSearch ? 'header-icon big' : 'header-icon';
+
     if (this.props.loggedIn) {
       profButton = (
-        <div className='profile-drop-down-trigger'>
+        <div id='prof-trigger' className='profile-drop-down-trigger'>
           <img src='http://flaticons.net/icons/Application/User-Profile.png'
                alt='profile'/>
           <ProfileDropDown logOut={this.logOut}
@@ -53,8 +56,6 @@ class Header extends React.Component {
       profButton = (<a className='sign-in' onClick={this.show.bind(this)}>Sign In</a>);
     }
 
-    let headerClass = this.getHeaderClass();
-    let headIconClass = this.showSearch ? 'header-icon big' : 'header-icon';
     return (
       <div className='header-background'>
         <section className={headerClass}>

@@ -10,7 +10,7 @@ class PostingResults extends React.Component {
     this.requestAllPostings = props.requestAllPostings.bind(this);
     this.requestOnePosting = props.requestOnePosting.bind(this);
     this.state = {data: [], offset: 0};
-    this.perPage = 25;
+    this.perPage = 15;
     this.getSubsetByOffset = this.getSubsetByOffset.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
   }
