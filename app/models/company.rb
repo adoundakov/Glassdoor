@@ -40,4 +40,14 @@ class Company < ApplicationRecord
     query = '%' + input.join('%') + '%'
     Company.where("UPPER(name) LIKE UPPER(?)", query)
   end
+
+  def rating_stats
+    ActiveRecord::Base.connection.execute(<<-SQL
+      SELECT COUNT(id) as num_reviews, rating FROM reviews
+      WHERE company_id = #{self.id}
+      GROUP BY rating
+      ORDER BY rating
+      SQL
+      )
+  end
 end
