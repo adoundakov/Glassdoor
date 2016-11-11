@@ -28,7 +28,11 @@ Finally, easyHire allows users to review the companies they have worked for. In 
 
 Reviews are stored in a separate table and belong to a company and a user through respective `company_id` and `user_id` properties. easyHire's reviews are anonymous however, and `user_id`s are only used server-side to make sure a particular user doesn't review a company more than once. (There are plans to expand this feature so users can rate multiple times)
 
-![image of review form](docs/screenshots/reviewindex.png)
+![image of review form](docs/screenshots/addreview.png)
+
+Additionally a list of all reviews for a company is available for seekers to browse.
+
+![image of review index](docs/screenshots/reviewindex.png)
 
 ## Future Directions for easyHire
 

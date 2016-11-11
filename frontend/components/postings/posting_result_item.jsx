@@ -6,7 +6,6 @@ const PostingResultItem = ({posting, postAction}) => {
   const handleClick = (e) => {
     postAction(posting.id);
   };
-
   return (
     <li className='posting-result-item cf'
         onClick={handleClick}>
@@ -16,9 +15,7 @@ const PostingResultItem = ({posting, postAction}) => {
       <div className='posting-info'>
         <span className='posting-result-title'>{posting.title}</span>
         <span>
-          <Link to={`/company/${posting.company.id}`}>
-            {posting.company.name}
-          </Link>
+          {posting.company.name}
         </span>
         <div className='posting-info-span'>
           <span>{posting.company.location}</span>

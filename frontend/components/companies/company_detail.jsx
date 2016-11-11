@@ -39,7 +39,7 @@ class CompanyDetail extends React.Component {
                          currentUser={this.props.currentUser}/>
                        <CompanyPostings companyName={company.name}
                            postings={company.postings}/>
-                         <CompanyOverview company={company}
+          <CompanyOverview company={company}
                            width={''}/>
           <div className='company-description'>
             {company.description}
