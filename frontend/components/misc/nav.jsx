@@ -10,7 +10,7 @@ const Nav = (props) => {
         <li><Link to='/companies'>Companies</Link></li>
         <li><Link to='/salaries'>Salaries</Link></li>
       </ul>
-      {props.showSearch ? <SearchBarContainer searchType={props.searchType} /> : ''}
+      {props.showSearch ? <SearchBarContainer searchType={props.searchType}/> : ''}
     </div>
   );
 };

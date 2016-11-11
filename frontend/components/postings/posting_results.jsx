@@ -16,7 +16,9 @@ class PostingResults extends React.Component {
   }
 
   componentWillMount() {
-    this.requestAllPostings();
+    if (this.props.existingQuery === '') {
+      this.requestAllPostings();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,6 +34,7 @@ class PostingResults extends React.Component {
     let offset = Math.ceil(selected * this.perPage);
     let subset = this.getSubsetByOffset(this.props.postings, offset);
     this.setState({offset: offset, data: subset});
+    window.scrollTo(0,0);
   }
 
   render() {

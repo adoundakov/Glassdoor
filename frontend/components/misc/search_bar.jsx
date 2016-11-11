@@ -1,11 +1,16 @@
 import React, { PropTypes } from 'react';
+import { withRouter } from 'react-router';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.update = this.update.bind(this);
-    this.state = {query: ''};
+    this.state = {query: props.existingQuery};
     this.submitQuery = this.submitQuery.bind(this);
+  }
+
+  componentDidMount() {
+    this.submitQuery();
   }
 
   update(e) {
@@ -28,6 +33,7 @@ class SearchBar extends React.Component {
     return (
       <div className='search-bar'>
         <input type='text'
+               value={this.state.query}
                placeholder={'Search '+ this.props.searchType + ' ...'}
                onChange={this.update}/>
       </div>
@@ -35,4 +41,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

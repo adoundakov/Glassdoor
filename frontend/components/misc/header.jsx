@@ -63,7 +63,7 @@ class Header extends React.Component {
             <div className={headIconClass}>{''}</div>
             <h3>easyHire</h3>
           </div>
-          <Nav showSearch={this.showSearch} searchType={this.searchType} />
+          <Nav showSearch={this.showSearch} searchType={this.searchType}/>
           {profButton}
           <Modal
             style={{transition: 'opacity 100ms linear'}}

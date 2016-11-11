@@ -8,6 +8,7 @@ import CompanyReducer from './company_reducer';
 import CompanyDetailReducer from './company_detail_reducer';
 import ApplicationReducer from './application_reducer';
 import ReviewReducer from './review_reducer';
+import QueryReducer from './query_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -17,7 +18,8 @@ const RootReducer = combineReducers({
   companies: CompanyReducer,
   companyDetail: CompanyDetailReducer,
   application: ApplicationReducer,
-  reviews: ReviewReducer
+  reviews: ReviewReducer,
+  existingQuery: QueryReducer
 });
 
 export default RootReducer;

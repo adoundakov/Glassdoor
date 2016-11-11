@@ -7,7 +7,8 @@ import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
    companies: selectAllCompanies(state),
-   currentUser: state.session.currentUser
+   currentUser: state.session.currentUser,
+   existingQuery: state.existingQuery
  });
 
 const mapDispatchToProps = (dispatch) => ({

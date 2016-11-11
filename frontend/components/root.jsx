@@ -4,7 +4,7 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 
 import App from './app';
 import ConstructionSplash from './misc/construction';
-import LandingSplash from './misc/landing_splash';
+import LandingSplashContainer from './misc/landing_splash_container';
 import UserProfileContainer from './users/profile_container';
 import PostingResultsContainer from './postings/posting_results_container';
 import SavedJobsContainer from './users/saved_jobs_container';
@@ -85,7 +85,7 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path={'/'} component={App}>
-          <IndexRoute component={LandingSplash}/>
+          <IndexRoute component={LandingSplashContainer}/>
           <Route path='user/:userId'
                  component={UserProfileContainer}
                  onEnter={_redirectIfWrongUser}>

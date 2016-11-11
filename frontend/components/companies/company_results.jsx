@@ -16,7 +16,9 @@ class CompanyResults extends React.Component {
   }
 
   componentWillMount() {
-    this.requestAllCompanies();
+    if (this.props.existingQuery === '') {
+      this.requestAllCompanies();
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,6 +34,7 @@ class CompanyResults extends React.Component {
     let offset = Math.ceil(selected * this.perPage);
     let subset = this.getSubsetByOffset(this.props.companies, offset);
     this.setState({offset: offset, data: subset});
+    window.scrollTo(0,0);
   }
 
   render () {

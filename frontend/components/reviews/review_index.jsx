@@ -32,6 +32,7 @@ class ReviewIndex extends React.Component {
     let offset = Math.ceil(selected * this.perPage);
     let subset = this.getSubsetByOffset(this.props.reviews, offset);
     this.setState({offset: offset, data: subset});
+    window.scrollTo(0,0);
   }
 
   addReview (id) {

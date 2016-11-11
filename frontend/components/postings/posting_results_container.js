@@ -5,7 +5,8 @@ import { requestAllPostings,
          requestOnePosting } from '../../actions/posting_actions';
 
 const mapStateToProps = (state) => ({
-  postings: selectAllPostings(state)
+  postings: selectAllPostings(state),
+  existingQuery: state.existingQuery
 });
 
 const mapDispatchToProps = (dispatch) => ({
