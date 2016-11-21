@@ -1,6 +1,6 @@
 # easyHire
 
-[easyHire live!](easy-hire.me)
+[easyHire live!](http://easy-hire.me)
 
 easyHire is a full-stack web application inspired by [Glassdoor](www.glassdoor.com). It is implemented with a Ruby on Rails backend, a PostreSQL database, and a React.js frontend implementing the Redux design pattern.
 
