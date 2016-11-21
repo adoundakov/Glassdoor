@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Countdown from 'react-count-down';
 import { hashHistory } from 'react-router';
 
 class LandingSplash extends React.Component {

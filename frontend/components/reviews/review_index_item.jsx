@@ -13,7 +13,7 @@ const ReviewIndexItem = ({review}) => {
     <li className='review-index-item'>
       <div className='review-item-header'>
         <div className='top-info'>
-          <p className='review-age'>Nov 11th, 2015</p>
+          <p className='review-age'>{review.age} ago</p>
           <div className='mini-logo'>
             <img src={review.company_logo_url} alt='Review Logo'/>
           </div>

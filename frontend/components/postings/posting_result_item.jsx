@@ -5,6 +5,7 @@ const PostingResultItem = ({posting, postAction}) => {
 
   const handleClick = (e) => {
     postAction(posting.id);
+    window.scrollTo(0,0);
   };
   return (
     <li className='posting-result-item cf'

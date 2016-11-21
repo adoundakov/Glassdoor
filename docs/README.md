@@ -5,7 +5,7 @@
 
 ## Minimum Viable Product
 
-This web application is a clone of the popular job-hunting website Glassdoor,
+This web application is inspired by the popular job application website Glassdoor,
 built using Ruby on Rails and React/Redux. Over the next two weeks, the app will
 support the following (all with bug-free navigation, great styling, and adequate seed data):
 
@@ -16,7 +16,7 @@ support the following (all with bug-free navigation, great styling, and adequate
 - [x] Companies will have a profile page that lists information, openings, and reviews for the company
 - [x] Seekers can create reviews for companies.
 - [x] Users not wishing to sign up can use the site as a guest
-- [ ] Production README
+- [x] Production README
 
 ## Design Docs
 
@@ -44,5 +44,5 @@ support the following (all with bug-free navigation, great styling, and adequate
 - [ ] Salaries: Add salary data for positions / industries
 - [ ] Seekers: See advanced data about salaries / openings
 - [ ] Seekers: File Upload / Resume Version management (pick which resume to apply with)
-- [ ] Employers: Postings CRUD, with account creation (maybe company verification?)
+- [ ] Employers: Postings CRUD, with employer account creation (maybe company verification?)
 - [ ] Employers: See aggregate data for all applicants, along with advanced posting performance.
