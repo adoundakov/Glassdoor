@@ -1,7 +1,7 @@
 {
   "name": "fullStack",
   "version": "1.0.0",
-  "description": "clone of glassdoor.com",
+  "description": "Job-hunting website, written in Ruby on Rails / React.js",
   "main": "index.js",
   "scripts": {
     "heroku-postbuild": "webpack --config webpack.config.prod.js"
