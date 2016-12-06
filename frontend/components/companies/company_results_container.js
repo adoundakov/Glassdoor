@@ -15,7 +15,6 @@ const mapDispatchToProps = (dispatch) => ({
   requestAllCompanies: searchType => dispatch(requestAllCompanies(searchType)),
   requestOneCompany: id => dispatch(requestOneCompany(id)),
   openModal: () => dispatch(openModal())
-
 });
 
 export default connect(

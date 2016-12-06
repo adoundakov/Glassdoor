@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { withRouter } from 'react-router';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -9,15 +8,21 @@ class SearchBar extends React.Component {
     this.submitQuery = this.submitQuery.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
+    console.log('MOUNTED');
+    console.log([this.state.query]);
     this.submitQuery();
   }
+
+  // ROUTE IS CHANGING ON INITIAL SUBMIT, SOMEHOW BEING REFRESHED AND A '?' APPEARS BEFORE '#' IN ROUTE
 
   update(e) {
     this.setState({query: e.target.value}, () => {this.submitQuery();});
   }
 
   submitQuery() {
+    console.log('SUBMITTED');
+    console.log([this.state.query]);
     let input = this.state.query.split(' ');
     switch (this.props.searchType) {
       case 'companies':
@@ -41,4 +46,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default withRouter(SearchBar);
+export default SearchBar;
