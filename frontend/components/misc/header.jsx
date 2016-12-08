@@ -11,6 +11,7 @@ class Header extends React.Component {
     this.logOut = props.logOut.bind(this);
     this.openModal = props.openModal.bind(this);
     this.closeModal = props.closeModal.bind(this);
+    this.clearErrors = props.clearErrors.bind(this);
   }
 
   show(){
@@ -24,7 +25,7 @@ class Header extends React.Component {
   getHeaderClass () {
     let type = this.props.router.location.pathname.slice(1);
     switch (type) {
-      case "companies":
+      case 'companies':
         this.showSearch = true;
         this.searchType = type;
         return 'header tall';
@@ -73,7 +74,7 @@ class Header extends React.Component {
             closeOnOuterClick={true}
             show={this.props.modal}
             onClose={this.close.bind(this)}>
-            <SessionForm />
+            <SessionForm clearErrors={this.clearErrors}/>
           </Modal>
         </section>
       </div>
