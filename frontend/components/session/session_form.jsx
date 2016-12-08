@@ -1,19 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router';
 import Tabs from './tabs';
 import LoginFormContainer from './log_in_form_container';
 import SignupFormContainer from './sign_up_form_container';
 
-const SessionForm = () => {
-  let klass = "hidden";
+const SessionForm = ({clearErrors}) => {
   let panes = [{title: "Sign Up", content: <SignupFormContainer />},
               {title: "Sign In", content: <LoginFormContainer />}];
-  const toggleKlass = () => {
-    klass === "hidden" ? klass = "" : klass = "hidden";
-  };
 
   return (
-    <Tabs panes={panes}/>
+    <Tabs panes={panes}
+          clearErrors={clearErrors}/>
   );
 };
 
