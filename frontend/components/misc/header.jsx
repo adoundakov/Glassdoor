@@ -19,6 +19,7 @@ class Header extends React.Component {
   }
 
   close(){
+    this.clearErrors();
     this.closeModal();
   }
 
