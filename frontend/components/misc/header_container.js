@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Header from './header';
-import {logOut} from '../../actions/session_actions';
+import {logOut, clearErrors} from '../../actions/session_actions';
 import {openModal, closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = state => ({
@@ -12,7 +12,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   logOut: () => dispatch(logOut()),
   openModal: () => dispatch(openModal()),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(

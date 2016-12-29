@@ -38,6 +38,7 @@ export default class Tabs extends React.Component {
   }
 
   selectTab(num) {
+    this.props.clearErrors();
     this.setState({selectedPane: num});
   }
 
