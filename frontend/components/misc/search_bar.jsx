@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props.existingQuery);
     this.update = this.update.bind(this);
     this.state = {query: props.existingQuery};
     this.submitQuery = this.submitQuery.bind(this);
@@ -11,10 +12,14 @@ class SearchBar extends React.Component {
   componentWillMount() {
     console.log('MOUNTED');
     console.log([this.state.query]);
-    this.submitQuery();
+    if (this.state.query != '') {
+      this.submitQuery();
+    }
   }
 
   // ROUTE IS CHANGING ON INITIAL SUBMIT, SOMEHOW BEING REFRESHED AND A '?' APPEARS BEFORE '#' IN ROUTE
+  // The ? triggers a refresh, navigation in chrome.
+  //
 
   update(e) {
     this.setState({query: e.target.value}, () => {this.submitQuery();});
@@ -23,14 +28,16 @@ class SearchBar extends React.Component {
   submitQuery() {
     console.log('SUBMITTED');
     console.log([this.state.query]);
-    let input = this.state.query.split(' ');
-    switch (this.props.searchType) {
-      case 'companies':
+    if (this.state.query != '') {
+      let input = this.state.query.split(' ');
+      switch (this.props.searchType) {
+        case 'companies':
         this.props.requestAllCompanies('SEARCH', input);
         break;
-      case 'jobs':
+        case 'jobs':
         this.props.requestAllPostings('SEARCH', input);
         break;
+      }
     }
   }
 

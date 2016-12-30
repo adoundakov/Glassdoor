@@ -6,6 +6,8 @@ const PostingReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_POSTINGS:
+      console.log('RECEIVED POSTINGS');
+      console.log(action.postings);
       return action.postings;
     default:
       return state;

@@ -16,12 +16,18 @@ class PostingResults extends React.Component {
   }
 
   componentWillMount() {
+    console.log('MOUNTED POSTINGS');
+    console.log('CURRENT POSTINGS');
+    console.log(this.props.postings);
     if (this.props.existingQuery === '') {
       this.requestAllPostings();
     }
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log('RECEIVED PROPS ');
+    console.log('CURRENT POSTINGS');
+    console.log(this.props.postings.length);
     this.setState({data: this.getSubsetByOffset(nextProps.postings, 0)});
   }
 
