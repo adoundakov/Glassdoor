@@ -12,7 +12,7 @@ class LandingSplash extends React.Component {
   }
 
   componentWillMount() {
-    this.setExistingQuery('')
+    this.setExistingQuery('');
   }
 
   handleCategoryClick (tgt) {
@@ -22,7 +22,9 @@ class LandingSplash extends React.Component {
     };
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    console.log(e);
+    e.preventDefault();
     console.log('SUBMIT FROM HOME PAGE');
     this.setExistingQuery(this.state.query);
     hashHistory.push(`/${this.state.category}`);

@@ -19,7 +19,5 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
   end
 
-  get '/?#', to: 'static_pages#show'
-
-  root to: "static_pages#root"
+  root to: "static_pages#show"
 end
