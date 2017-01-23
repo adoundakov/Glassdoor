@@ -253,7 +253,7 @@ Founded in 2002, the SpaceX team now numbers over 500, located primarily in Hawt
 Company.create!(name: 'Logitech',
                 size: '5,001-10,000',
                 ceo: 'Bracken Darrell',
-                logo_url: 'https://cloudinary.com/console/media_library#/dialog/image/upload/logos/logitech_logo_wgglgn',
+                logo_url: 'https://res.cloudinary.com/adoundakov/image/upload/v1485127215/logos/logitech_logo_wgglgn.jpg',
                 cover_url: 'https://esncard.org/sites/default/files/pictures/erasmus_banner_1.png',
                 location: 'Fremont, CA',
                 company_url: 'www.logitech.com',
