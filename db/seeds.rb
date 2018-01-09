@@ -1,6 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
+puts "Creating Users..."
 
 User.create!(username: 'guestSeeker', email: 'someone@example.com', password: '123456')
 User.create!(username: 'alexSeeker', email: 'alex@aol.com', password: '123456')
@@ -9,6 +10,8 @@ User.create!(username: 'alexPoster', email: 'alex@employer.io', password: '12345
   username = 'dummy' + "#{num}"
   User.create!(username: username, email: username, password: '123456')
 end
+
+puts "Creating Companies..."
 
 Company.create!(name: 'Google',
                 size: '10,001+',
@@ -330,6 +333,7 @@ The industry has been neglecting something far too long, something that for us i
 We still see ourself as a start-up, a company with ridiculous high ambitions. We like to challenge the norm and reach for things that others deem unattainable. Setting trends in the here and now while extending into the future. That’s Mionix.
 ')
 
+puts "Creating Open Positions..."
 
 POSITIONS = %w(Full-Time Part-Time Intern Contract)
 250.times do
@@ -341,6 +345,8 @@ POSITIONS = %w(Full-Time Part-Time Intern Contract)
   description = d_array.join(' \n ')
   Posting.create!(title: title, company_id: company_id, position: position, description: description)
 end
+
+puts "Stubbing Posting Data..."
 
 PostingSave.create!(user_id: 1, posting_id: 1)
 PostingSave.create!(user_id: 1, posting_id: 2)
@@ -362,6 +368,8 @@ PostingApplication.create!(user_id: 2, posting_id: 3, resume: 'HIRE ME PLEASE')
 PostingApplication.create!(user_id: 2, posting_id: 4, resume: 'HIRE ME PLEASE')
 PostingApplication.create!(user_id: 2, posting_id: 5, resume: 'HIRE ME PLEASE')
 
+puts "Creating Reviews..."
+
 31.times do |companyId|
   numUsers = rand(75) + rand(50)
   numUsers.times do |userId|
@@ -372,7 +380,6 @@ PostingApplication.create!(user_id: 2, posting_id: 5, resume: 'HIRE ME PLEASE')
     pros = Faker::Business.pros
     cons = Faker::Business.cons
     advice = Faker::Business.advice
-    puts "Creating review with company:#{companyId}, title:#{job_title}"
     Review.create!(user_id: userId + 1, company_id: companyId + 1, rating: rating,
                    current_employee: current_employee, job_title: job_title,
                    pros: pros, cons: cons, advice: advice, title: title)
