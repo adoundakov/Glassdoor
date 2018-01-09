@@ -4,7 +4,8 @@
   "description": "Job-hunting website, written in Ruby on Rails / React.js",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "webpack --config webpack.config.prod.js"
+    "heroku-postbuild": "webpack --config webpack.config.prod.js",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
